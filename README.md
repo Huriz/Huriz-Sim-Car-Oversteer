@@ -49,7 +49,7 @@ spinning under power (wheelspin), and it switches off if the telemetry refresh i
 
 - **Le Mans Ultimate** – the plugin was made for it and it is the most tested game. It reads each rear tyre.
 - **iRacing (beta)** – detected automatically. iRacing does not give the slip of each tyre, so the rear slip is
-  **estimated** from the car speed and its yaw rate. It has been tested in the game, but there is no wheelspin filter yet.
+  **estimated** from the car speed and its yaw rate. Still in testing.
 - Other games are not supported. If you want to help with one, the **Open the diagnostics** button saves the telemetry
   numbers of the game that is running (no personal data).
 
@@ -339,7 +339,7 @@ ruedas patinan por potencia (wheelspin) y se apaga si el refresco de la telemetr
 
 - **Le Mans Ultimate** – el plugin nació para él y es el juego más probado. Lee cada neumático trasero.
 - **iRacing (beta)** – se detecta solo. iRacing no da el slip de cada neumático, así que el slip trasero se
-  **estima** con la velocidad del coche y su giro (yaw). Está probado en el juego, pero todavía no tiene filtro de wheelspin.
+  **estima** con la velocidad del coche y su giro (yaw). En pruebas.
 - Otros juegos no están soportados. Si quieres ayudar con uno, el botón **Abrir el diagnóstico** guarda los números de
   telemetría del juego en marcha (sin datos personales).
 

@@ -24,8 +24,7 @@
 - **New name: Huriz - Sim Car Oversteer**, because it is no longer only for Le Mans Ultimate. Updating renames the effects in
   SimHub and the Dash Studio overlay automatically; your settings and setups are kept.
 - **iRacing (beta)**: the plugin detects the game by itself. iRacing does not give the slip of each tyre, so the rear slip
-  is calculated from the car speed and its yaw rate (the rest of the effect works the same). There is no wheelspin
-  filter in iRacing yet. Tested in the game.
+  is calculated from the car speed and its yaw rate (the rest of the effect works the same). Still in testing.
 - **Slip Max 10° by default** (was 12°): full vibration now arrives right at the limit of a slide you can still save. The
   bar goes from 3° to 18°, green between 8° and 14°. Your saved setups keep their value; only Default and **Reset to
   defaults** change.
@@ -159,8 +158,7 @@
 - **Nuevo nombre: Huriz - Sim Car Oversteer**, porque ya no es solo para Le Mans Ultimate. Al actualizar se renombran solos
   los efectos de SimHub y el overlay de Dash Studio; tus ajustes y setups se conservan.
 - **iRacing (beta)**: el plugin detecta el juego solo. iRacing no da el deslizamiento de cada neumático, así que el derrape
-  de la zaga se calcula con la velocidad del coche y su giro (yaw); el resto del efecto funciona igual. Todavía no hay
-  filtro de wheelspin en iRacing. Probado en el juego.
+  de la zaga se calcula con la velocidad del coche y su giro (yaw); el resto del efecto funciona igual. En pruebas.
 - **Slip Max 10° por defecto** (antes 12°): la vibración a tope llega justo en el límite de un derrape que aún se salva.
   La barra va de 3° a 18°, en verde entre 8° y 14°. Tus setups guardados conservan su valor; solo cambian Default y
   **Restablecer valores**.
