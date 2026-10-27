@@ -6,6 +6,53 @@
 
 ## English
 
+### 0.5.2 (includes 0.4.0, 0.5.0 and 0.5.1, which were not released on their own)
+- **Repository renamed to Huriz-Sim-Car-Oversteer** (the LMU is gone from the name). Old links keep working, and versions
+  already installed still find updates there.
+- **Lighter overlay**: the Dash Studio overlay image is only drawn and saved when it changes (car stopped, in the pits or
+  in the menus it does nothing), so it uses less CPU and stops creating and deleting files all the time.
+- **Clean diagnostics every session**: `diagnostico.txt`, `errores.log` and the effect search logs start empty every time
+  SimHub starts, so they never fill up over several days and always show the current session.
+- **Active Pedals note**: the Simucube ActivePedal card now says the pedal needs some pressure to feel the vibration
+  (at rest it sits on its end stop and nothing moves).
+- **New-version window**: when there is a newer release, a small window offers Download, Later or "Don't remind me about
+  this version". It shows once per SimHub start, 30 seconds after loading, and never while a game is running. The banner in the tab stays.
+- **Support the project**: a coloured strip at the top of the tab and a "Support the project" button next to Diagnostics
+  open a PayPal.Me link. The strip closes with the X and does not come back; the plugin stays free.
+
+### 0.5.0 (not released on its own: included in 0.5.2)
+- **New name: Huriz - Sim Car Oversteer**, because it is no longer only for Le Mans Ultimate. Updating renames the effects in
+  SimHub and the Dash Studio overlay automatically; your settings and setups are kept.
+- **iRacing (beta)**: the plugin detects the game by itself. iRacing does not give the slip of each tyre, so the rear slip
+  is calculated from the car speed and its yaw rate (the rest of the effect works the same). There is no wheelspin
+  filter in iRacing yet. Tested in the game.
+- **Slip Max 10° by default** (was 12°): full vibration now arrives right at the limit of a slide you can still save. The
+  bar goes from 3° to 18°, green between 8° and 14°. Your saved setups keep their value; only Default and **Reset to
+  defaults** change.
+- **Reference marks**: the green dot in the centre is replaced by a thin green line (0°); the slide line stays green up to 80% of Slip Start
+  and then turns towards yellow at Slip Start and red at Slip Max.
+- **Diagnostics for new games**: while a game is running the plugin saves a small text file with the telemetry numbers it gets
+  (`diagnostico.txt`), and a button in the tab opens its folder, so it can be tuned with real data. Errors the plugin used
+  to ignore silently are now written to `errores.log` in the same folder.
+- **One file per game**: the SimHub properties each game is read from are in a small JSON file per game inside the plugin.
+  Advanced users can override or add one by dropping a `.json` file into `PluginsData\Common\HurizOversteer.Games` in SimHub.
+
+### 0.4.0 (not released on its own: included in 0.5.2)
+- **Active Pedals (Simucube, beta)**: the same slide vibration on the Simucube ActivePedal. The installer creates the effect in
+  SimHub (Devices > Simucube Active Pedals), on the throttle, like on the haptic pedals. Its own drop-down with on/off
+  switch, frequency (50–75 Hz by default, up to 100 Hz), high priority and live graph. Beta: testing in progress.
+- **Installer**: groups for Bass shakers and Pedals (haptic pedals and Simucube ActivePedal, in beta). Each one says "detected"
+  or "not detected" and comes ticked when detected, but you can tick it anyway (for example, pedals added to SimHub
+  later). The pedal effects go into the **Default profile** of each device.
+- **New car drawing** in the live view and the Dash Studio overlay, based on a top view of a GT car: real silhouette,
+  windows, vents, mirrors, headlights and a wide rear wing, with relief shading. The slide degrees sit on the roof.
+- **Front wheels turn with your steering**, on the car and on its grey shadow, so you see where the wheels point
+  compared with how the car is really going.
+- **Colours by zone**, in a smooth gradient: green at 80% of your Slip Start, yellow at Slip Start and red at Slip Max.
+  The rear wheels, the car outline, the degrees and the percentage use them.
+- **Reference marks**: a green dot in the centre, yellow at Slip Start and red at Slip Max. The slide is drawn on the
+  degree line itself: blue at the centre, green at 80% of Slip Start, yellow at Slip Start and red at Slip Max.
+
 ### 0.3.5
 - **New version notice:** when SimHub starts, the plugin checks on GitHub (at most once a day) whether there is a newer
   version. If there is, a blue strip appears at the top of the plugin tab with a **Download** button and a
@@ -93,6 +140,53 @@
 ---
 
 ## Español
+
+### 0.5.2 (incluye la 0.4.0, la 0.5.0 y la 0.5.1, que no se publicaron solas)
+- **Repositorio renombrado a Huriz-Sim-Car-Oversteer** (ya no lleva LMU en el nombre). Los enlaces antiguos siguen
+  funcionando y las versiones ya instaladas siguen encontrando actualizaciones ahí.
+- **Overlay más ligero**: la imagen del overlay de Dash Studio solo se dibuja y se guarda cuando cambia (con el coche parado,
+  en boxes o en los menús no hace nada), así que gasta menos CPU y deja de crear y borrar ficheros sin parar.
+- **Diagnóstico limpio en cada sesión**: `diagnostico.txt`, `errores.log` y los registros de búsqueda de efectos empiezan
+  vacíos cada vez que arranca SimHub, así que no se llenan con los días y siempre muestran la sesión actual.
+- **Aviso en Active Pedals**: la tarjeta del Simucube ActivePedal ahora dice que el pedal necesita algo de presión para
+  notar la vibración (en reposo está en su tope y no hay nada que mover).
+- **Ventana de versión nueva**: cuando hay una release más nueva, una ventana pequeña ofrece Descargar, Más tarde o "No
+  avisar de esta versión". Sale una vez por arranque de SimHub, 30 segundos después de cargar, y nunca con un juego en marcha. El aviso de la pestaña sigue.
+- **Apoyar el proyecto**: una franja de color arriba de la pestaña y un botón "Apoyar el proyecto" junto a Diagnóstico
+  abren un enlace de PayPal.Me. La franja se cierra con la X y no vuelve a salir; el plugin sigue siendo gratis.
+
+### 0.5.0 (no se publicó sola: va incluida en la 0.5.2)
+- **Nuevo nombre: Huriz - Sim Car Oversteer**, porque ya no es solo para Le Mans Ultimate. Al actualizar se renombran solos
+  los efectos de SimHub y el overlay de Dash Studio; tus ajustes y setups se conservan.
+- **iRacing (beta)**: el plugin detecta el juego solo. iRacing no da el deslizamiento de cada neumático, así que el derrape
+  de la zaga se calcula con la velocidad del coche y su giro (yaw); el resto del efecto funciona igual. Todavía no hay
+  filtro de wheelspin en iRacing. Probado en el juego.
+- **Slip Max 10° por defecto** (antes 12°): la vibración a tope llega justo en el límite de un derrape que aún se salva.
+  La barra va de 3° a 18°, en verde entre 8° y 14°. Tus setups guardados conservan su valor; solo cambian Default y
+  **Restablecer valores**.
+- **Marcas de referencia**: el punto verde del centro se sustituye por una línea verde fina (0°); la línea del derrape es verde
+  hasta el 80% de Slip Start y de ahí cambia hacia amarillo en Slip Start y rojo en Slip Max.
+- **Diagnóstico para juegos nuevos**: mientras hay un juego en marcha el plugin guarda un pequeño archivo de texto con los números de telemetría
+  que recibe (`diagnostico.txt`), y un botón de la pestaña abre su carpeta, para poder ajustarlo con datos reales. Los errores
+  que antes se ignoraban sin dejar rastro se anotan ahora en `errores.log`, en la misma carpeta.
+- **Un fichero por juego**: las propiedades de SimHub de las que se lee cada juego están en un pequeño JSON por juego dentro del
+  plugin. Un usuario avanzado puede sustituir o añadir uno dejando un `.json` en `PluginsData\Common\HurizOversteer.Games` de SimHub.
+
+### 0.4.0 (no se publicó sola: va incluida en la 0.5.2)
+- **Active Pedals (Simucube, beta)**: la misma vibración del derrape en los Simucube ActivePedal. El instalador crea el efecto en
+  SimHub (Dispositivos > Simucube Active Pedals), en el acelerador, igual que en los pedales hápticos. Desplegable propio
+  con interruptor, frecuencia (50–75 Hz por defecto, hasta 100 Hz), prioridad alta y gráfica en vivo. Beta: en pruebas.
+- **Instalador**: grupos para Bass shakers y Pedales (hápticos y Simucube ActivePedal, en beta). Cada uno indica
+  "detectado" o "no detectado" y sale marcado si se detecta, pero se puede marcar igualmente (por ejemplo, pedales que
+  añadirás a SimHub más tarde). Los efectos de los pedales se crean en el **Default profile** de cada dispositivo.
+- **Coche nuevo** en la vista en vivo y en el overlay de Dash Studio, basado en una vista cenital de un GT: silueta real,
+  cristales, tomas, retrovisores, faros y alerón ancho, con relieve. Los grados del derrape van sobre el techo.
+- **Las ruedas delanteras giran con el volante**, en el coche y en su sombra gris, para ver hacia dónde apuntan las
+  ruedas frente a cómo va de verdad el coche.
+- **Colores por zonas**, en degradado continuo: verde en el 80% de tu Slip Start, amarillo en Slip Start y rojo en Slip Max.
+  Los usan las ruedas traseras, el contorno del coche, los grados y el porcentaje.
+- **Marcas de referencia**: punto verde en el centro, amarillo en Slip Start y rojo en Slip Max. El derrape se pinta
+  sobre la propia línea de grados: azul en el centro, verde en el 80% de Slip Start, amarillo en Slip Start y rojo en Slip Max.
 
 ### 0.3.5
 - **Aviso de versión nueva:** al arrancar SimHub, el plugin mira en GitHub (como mucho una vez al día) si hay una versión

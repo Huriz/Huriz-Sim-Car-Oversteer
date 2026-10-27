@@ -1,6 +1,6 @@
-# Huriz - LMU Oversteer
+# Huriz - Sim Car Oversteer
 
-*Formerly / antes: **LMU - Rear Slip Pro***
+*Formerly / antes: **Huriz - LMU Oversteer** and **LMU - Rear Slip Pro***
 
 [English](#english) | [Español](#español) · [Changelog](CHANGELOG.md)
 
@@ -8,11 +8,11 @@
 
 ## English
 
-A **SimHub plugin for Le Mans Ultimate** that makes your **bass shakers** and your **haptic pedals** vibrate
-when the rear wheels lose grip (rear-end slides). It works with **ShakeIt Bass Shakers** and with any haptic
-pedals set up in SimHub (for example Simagic).
+A **SimHub plugin for sim racing** (**Le Mans Ultimate** and **iRacing, beta**) that makes your **bass shakers**, your **haptic pedals** and your
+**Simucube ActivePedal** vibrate when the rear wheels lose grip (rear-end slides). It works with **ShakeIt Bass
+Shakers** and with the pedals set up in SimHub Devices (for example Simagic haptic pedals or Simucube Active Pedals).
 
-> **Version 0.3.5**, with no time limit. Feedback and bug reports are welcome in the *Issues* tab.
+> **Version 0.5.2**, with no time limit. Feedback and bug reports are welcome in the *Issues* tab.
 
 [![Demo video: the plugin running in Le Mans Ultimate](media/demo-2m33.webp)](https://www.youtube.com/watch?v=8viDyta5et0)
 
@@ -20,11 +20,11 @@ pedals set up in SimHub (for example Simagic).
 
 ### In short
 
-- **What it is:** a SimHub plugin that makes your bass shakers or haptic pedals vibrate when the rear of the car starts to slide in Le Mans Ultimate.
-- **Install:** download the installer, close SimHub, run it and choose what to install. It creates the effect for bass shakers (ShakeIt) and for haptic pedals, whichever you use.
+- **What it is:** a SimHub plugin that makes your bass shakers, haptic pedals or Simucube ActivePedal vibrate when the rear of the car starts to slide in Le Mans Ultimate or iRacing (beta).
+- **Install:** download the installer, close SimHub, run it and choose what to install. It creates the effect for bass shakers (ShakeIt), haptic pedals and Simucube ActivePedal, whichever you use.
 - **Overlay:** the installer also adds an overlay to Dash Studio (Overlays tab) that shows the live view over the game and combines with any other overlay.
 - **Two settings are enough:** **Slip Start** (when it starts) and **Slip Max** (when it reaches 100%). **Pro** mode adds curve, anticipation, suspension, throttle limit and smoothing.
-- **Everything from one tab:** turn the bass shakers, the haptic pedals and the overlay on or off, and set the frequencies of the shakers and pedals, without going into ShakeIt or Devices.
+- **Everything from one tab:** turn the bass shakers, the haptic pedals, the Simucube ActivePedal and the overlay on or off, and set their frequencies, without going into ShakeIt or Devices.
 - **One setup per car:** save and load named setups with one click.
 - **Everything explained below:** see the [Settings guide](#settings-guide).
 
@@ -39,50 +39,69 @@ how many degrees each tyre is moving sideways compared with the direction it poi
 1. While the car grips, the slip is small and nothing happens.
 2. When **both** rear tyres slide past **Slip Start**, the effect switches on at a low level.
 3. The more the rear slides, the stronger it gets, reaching 100% at **Slip Max**.
-4. The result is the vibration of the **rear axle**, which drives your bass shakers and haptic pedals.
+4. The result is the vibration of the **rear axle**, which drives your bass shakers and your pedals.
    **One body shaker is enough.**
 
 Built-in protections (not configurable): it stays off below about 22 km/h, it is muted while the wheels are
 spinning under power (wheelspin), and it switches off if the telemetry refresh is too slow.
+
+### Games
+
+- **Le Mans Ultimate** – the plugin was made for it and it is the most tested game. It reads each rear tyre.
+- **iRacing (beta)** – detected automatically. iRacing does not give the slip of each tyre, so the rear slip is
+  **estimated** from the car speed and its yaw rate. It has been tested in the game, but there is no wheelspin filter yet.
+- Other games are not supported. If you want to help with one, the **Open the diagnostics** button saves the telemetry
+  numbers of the game that is running (no personal data).
 
 ### What it does
 
 - Detects slip on both rear wheels, with anticipation and a wheelspin filter.
 - Limits the effect by throttle and boosts it with suspension bounce.
 - Settings tab with a **Simple** mode and a **Pro** mode, a **live view**, and **named setups per car**.
-- **Bass shakers** and **haptic pedals** drop-downs with an **on/off switch**, the **frequency range** (one bar with two
-  handles) and a **live graph** of the vibration. The switch and the frequencies are applied directly in SimHub.
+- **Bass shakers**, **haptic pedals** and **Active Pedals (Simucube)** drop-downs with an **on/off switch**, the
+  **frequency range** (one bar with two handles) and a **live graph** of the vibration. The switch and the frequencies
+  are applied directly in SimHub.
 - **Colour zones** under the main bars (green recommended, yellow with care, red not recommended) and a tick at the default value.
+- A **live view** with a GT car seen from above: its front wheels turn with your steering, and the rear wheels, the
+  outline and the slide line change colour with the slide (green, then yellow to red).
 - An **overlay for Dash Studio** (Overlays tab) that shows the live view over the game.
-- Creates the **Huriz - LMU Oversteer** effect for **bass shakers** in ShakeIt (50 Hz base, 60 Hz high, high priority).
+- Creates the **Huriz - Sim Car Oversteer** effect for **bass shakers** in ShakeIt (50 Hz base, 60 Hz high, high priority).
 - Creates the same effect for **haptic pedals** (for example Simagic), on the throttle pedal (45 Hz base, 50 Hz high).
+- Creates the same effect for the **Simucube ActivePedal**, on the throttle pedal (50 Hz base, 75 Hz high).
 - English and Spanish interface.
-- **New version notice:** it tells you in its tab when a newer version is out (it checks GitHub at most once a day and sends no data; without internet it does nothing).
+- **New version notice:** when a newer version is out it shows a banner in its tab and, 30 seconds after SimHub starts, a small window with **Download**, **Later** and **Skip this one** (never while a game is running). It checks GitHub at most once a day and sends no data; without internet it does nothing.
 
 ### Requirements
 
 - Windows 10 or 11.
-- SimHub with your **bass shakers** (ShakeIt: sound card and shakers) and/or your **haptic pedals** already set up.
-- Le Mans Ultimate.
+- SimHub with your **bass shakers** (ShakeIt: sound card and shakers) and/or your **pedals** (haptic pedals or
+  Simucube Active Pedals, in Devices) already set up.
+- Le Mans Ultimate or iRacing (beta).
 
 ### Installation
 
-1. Download `Huriz-LMU-Oversteer-Setup.exe` from the [latest release](../../releases/latest).
+1. Download `Huriz-Sim-Car-Oversteer-Setup.exe` from the [latest release](../../releases/latest).
 2. **Close SimHub** and run the installer (it asks for administrator rights and uses the language of Windows).
 3. Choose your SimHub folder (the one that contains `SimHubWPF.exe`).
-4. Choose what to install:
+4. Choose what to install. Each device says whether SimHub has it ("detected" in green, "not detected" in
+   red); detected ones come ticked, and you can tick the others anyway:
    - **Plugin** – always installed.
-   - **Bass shaker effect** (ShakeIt Bass Shakers) – ticked.
-   - **Haptic pedal effect** – when SimHub has haptic pedals ("detected" in green, "not detected" in red).
-     **Tested only with Simagic haptic pedals**; other brands have not been tested. It is created on the throttle pedal only; you can change it later in SimHub (Devices > your pedals > Effects).
+   - **Bass shakers** – the effect in ShakeIt Bass Shakers. Ticked.
+   - **Pedals (SimHub Devices)** – two options in the same group:
+     - **Haptic pedals** – **tested only with Simagic haptic pedals**; other brands have not been tested.
+     - **Simucube ActivePedal (beta)** – testing in progress. The pedal needs some pressure to feel the vibration.
    - **Dash Studio overlay** – ticked.
-5. Open SimHub and enable the **Huriz - LMU Oversteer** plugin when it asks.
-6. You will find the **Huriz - LMU Oversteer** effect:
+
+   The pedal effects are created in the **Default profile** of each device, on the throttle pedal only; you can
+   change it later in SimHub (Devices > your pedals > Effects). If SimHub doesn't have the device yet, add it in
+   Devices and run the installer again.
+5. Open SimHub and enable the **Huriz - Sim Car Oversteer** plugin when it asks.
+6. You will find the **Huriz - Sim Car Oversteer** effect:
    - **Bass shakers:** in ShakeIt, as a single **Mono** signal. One body shaker is enough. With several shakers, choose
      which ones play it in the channel map of your sound output in ShakeIt.
-   - **Haptic pedals:** in SimHub > Devices > your pedals > Effects.
+   - **Haptic pedals** and **Simucube ActivePedal:** in SimHub > Devices > your pedals > Effects (Default profile).
 
-**Updating from LMU - Rear Slip Pro:** just run the new installer. It removes the old plugin and keeps your
+**Updating from Huriz - LMU Oversteer or LMU - Rear Slip Pro:** just run the new installer. It removes the old plugin and keeps your
 settings, setups, effects, SimHub menu position and overlay layouts.
 
 If you have never opened ShakeIt, open it once and run the installer again so it can create the effect.
@@ -92,10 +111,10 @@ Click *More info* and then *Run anyway*.
 
 ### Overlay (Dash Studio)
 
-The installer adds an overlay called **Huriz - LMU Oversteer** to SimHub, so you can see the live view over the game.
+The installer adds an overlay called **Huriz - Sim Car Oversteer** to SimHub, so you can see the live view over the game.
 
 1. Open SimHub, go to **Dash Studio** and open the **Overlays** tab.
-2. Find **Huriz - LMU Oversteer** and add it to your overlay layout, next to any other overlays you already use.
+2. Find **Huriz - Sim Car Oversteer** and add it to your overlay layout, next to any other overlays you already use.
 3. Place and size it as you like. SimHub manages its position and size.
 
 In the plugin tab, the **Dash Studio overlay** drop-down has an on/off switch for the image and the
@@ -123,13 +142,18 @@ Open it from the **Guide** button in the plugin tab.
   never loses your values, because both modes use the same settings.
 - **ES / EN** – language of the tab. It follows Windows by default.
 - **Guide** – opens this guide in your browser.
-- **Live view** – shows what is happening while you drive. It has two cars on the same centre:
+- **Live view** – shows what is happening while you drive. It has two cars (a GT seen from above) on the same centre:
   the **light grey car** points where your wheels point (it follows your steering), and the
   **coloured-outline car** is how the car is really going. The coloured car turns the same angle as the grey
-  one **plus** whatever it slides extra; that extra, in degrees, is written in the middle of the car and drawn as
-  an arc. The two dots on each side of the arc mark your **Slip Start** and **Slip Max** (for example 3° and 12°).
+  one **plus** whatever it slides extra; that extra, in degrees, is written on the roof. The **front wheels** of both
+  cars turn with your steering.
+  - **Degree line** – the arc above the car. A **green dot** marks the centre, **yellow dots** your **Slip Start** and
+    **red dots** your **Slip Max** (for example 3° and 10°). The slide is drawn on this line and changes colour with it.
+  - **Colours** (smooth gradient) – **green** at 80% of Slip Start, **yellow** at Slip Start and **red** at Slip Max.
+    The rear wheels, the outline, the degrees and the percentage stay grey below 80% of Slip Start; the slide line
+    goes from **blue** at the centre to green at 80% (in a straight line it hardly shows). Each rear wheel uses its own
+    slide; the rest uses the rear wheel that slides less, like the effect.
   - **Percentage** (bottom centre) – how far into the slide you are: 0% at Slip Start, 100% at Slip Max.
-    The rear wheels and the car outline go from grey to orange to red as the effect grows.
   - **ABS and TC** – the front axle lights up green with "ABS", and the rear axle with "TC", while they act.
   - **Road** – a curved road behind the cars. It bends the way you turn the wheel and its stripes move with speed.
   - **Expand** – shows only the live view, full size, with a **Close** button (Esc also closes it).
@@ -139,7 +163,7 @@ Open it from the **Guide** button in the plugin tab.
 - **Slip Start (°)** – how much the rear tyres must slide sideways before the effect starts.
   Lower = it reacts earlier. Default 3°.
 - **Slip Max (°)** – the slip at which the effect reaches 100%. Higher = a longer, more gradual build-up.
-  Default 12°.
+  Default 10°.
 - **Progression curve** *(Pro)* – the shape between Slip Start and Slip Max. 1 = straight line.
   Below 1 the effect rises fast at first and flattens; above 1 it rises gently first and strongly at the end.
   Default 0.5.
@@ -164,21 +188,21 @@ Open it from the **Guide** button in the plugin tab.
 Under **Slip Start**, **Slip Max** and the frequency bars there are **colour zones**: green recommended, yellow with
 care, red not recommended. A small tick marks the default value.
 
-**Drop-downs: Dash Studio overlay, Bass shakers and Haptic pedals**
+**Drop-downs: Dash Studio overlay, Bass shakers, Haptic pedals and Active Pedals (Simucube)**
 
 Click the title to open or close each one. Closed, it shows a summary on the right (for example "50–60 Hz"),
-and the plugin remembers which ones you left open. **Bass shakers** and **Haptic pedals** only appear when their
-effect is in SimHub, so you only see what you have.
+and the plugin remembers which ones you left open. **Bass shakers**, **Haptic pedals** and **Active Pedals
+(Simucube)** only appear when their effect is in SimHub, so you only see what you have.
 
-- **On/off switch** (right of the title) – turns that output on or off. For bass shakers and haptic pedals it
+- **On/off switch** (right of the title) – turns that output on or off. For bass shakers and pedals it
   turns the effect on or off **directly in SimHub** (ShakeIt and Devices), so you see it there at once.
-- **Frequency** (bass shakers and haptic pedals) – one bar with two handles. Left: the frequency when the slide
+- **Frequency** (bass shakers and pedals) – one bar with two handles. Left: the frequency when the slide
   starts. Right: the frequency at full slide. The plugin writes them into the effect in SimHub (**Frequency** and
   **High frequency**), so set them here and not in ShakeIt. Defaults: 50–60 Hz for bass shakers, 45–50 Hz for
-  haptic pedals (they only go up to 50 Hz).
+  haptic pedals (they only go up to 50 Hz) and 50–75 Hz for the Simucube ActivePedal.
 - **Live graph** – the vibration the plugin sends over the last 8 seconds, from 0 to 100%. On the right: the
   maximum Hz, the current Hz (while it vibrates) and the minimum Hz. With the switch off it stays flat.
-- **High priority** (bass shakers and haptic pedals) – while it vibrates, the effect takes precedence over your other
+- **High priority** (bass shakers and pedals) – while it vibrates, the effect takes precedence over your other
   SimHub effects so it feels clearer. It is the same "High priority" option of the effect in SimHub: changing it here
   changes it there. On by default.
 - **Status line** – green when the plugin found its effect in SimHub.
@@ -200,7 +224,7 @@ Save one set of settings for each car and load it with one click.
 
 ### Tuning tips
 
-1. Start with the defaults (Slip Start 3°, Slip Max 12°) and drive a few laps.
+1. Start with the defaults (Slip Start 3°, Slip Max 10°) and drive a few laps.
 2. Effect starts too late or too early → move **Slip Start**.
 3. Hard to feel the build-up (it seems to jump to full) → raise **Slip Max** and set the **curve** closer to 1.
 4. Want to feel the very first moment more → lower **Slip Start** a little, or raise **Anticipation**.
@@ -243,7 +267,8 @@ Properties published by the plugin (search "HurizOversteer" in SimHub):
 | `RL`, `RR` | Output of the rear axle effect (0-100), without switch |
 | `Shaker.RL`, `Shaker.RR` | Same output for bass shakers: 0 when their switch is off |
 | `Haptic.RL`, `Haptic.RR` | Same output for haptic pedals: 0 when their switch is off |
-| `Shaker.Frequency`, `Haptic.Frequency` | Frequency (Hz) that matches the current vibration, from the minimum to the maximum |
+| `ActivePedal.RL`, `ActivePedal.RR` | Same output for the Simucube ActivePedal: 0 when its switch is off |
+| `Shaker.Frequency`, `Haptic.Frequency`, `ActivePedal.Frequency` | Frequency (Hz) that matches the current vibration, from the minimum to the maximum |
 | `Expiry.DaysLeft` | Days left until this version expires, or -1 if the build has no limit |
 | `Debug.Rate` | New telemetry readings per second |
 | `Debug.SlipRL/RR` | Slip angle per rear wheel (degrees) |
@@ -255,7 +280,7 @@ Properties published by the plugin (search "HurizOversteer" in SimHub):
 | `Overlay.Image` | Path of the latest overlay image (used by the Dash Studio template) |
 
 The effect created in ShakeIt is a Mono Custom effect (JavaScript) that returns `$prop('HurizOversteerPlugin.Shaker.RL')`
-and `$prop('HurizOversteerPlugin.Shaker.RR')` on the rear channels; on the haptic pedals it uses `Haptic.RL` and `Haptic.RR`.
+and `$prop('HurizOversteerPlugin.Shaker.RR')` on the rear channels; on the haptic pedals it uses `Haptic.RL` and `Haptic.RR`, and on the Simucube ActivePedal `ActivePedal.RL` and `ActivePedal.RR`.
 
 ### Uninstall
 
@@ -272,11 +297,12 @@ Redistribution and modification are not allowed.
 
 ## Español
 
-Plugin de SimHub para **Le Mans Ultimate** que hace vibrar tus **bass shakers** y tus **pedales hápticos** cuando
-las ruedas traseras pierden agarre (derrape de la zaga). Funciona con **ShakeIt Bass Shakers** y con cualquier
-pedal háptico configurado en SimHub (por ejemplo Simagic).
+Plugin de SimHub para **simracing** (**Le Mans Ultimate** e **iRacing, beta**) que hace vibrar tus **bass shakers**, tus **pedales hápticos** y tus
+**Simucube ActivePedal** cuando las ruedas traseras pierden agarre (derrape de la zaga). Funciona con **ShakeIt Bass
+Shakers** y con los pedales configurados en Dispositivos de SimHub (por ejemplo pedales hápticos Simagic o Simucube
+Active Pedals).
 
-> **Versión 0.3.5**, sin límite de tiempo. Los comentarios y fallos son bienvenidos en la pestaña *Issues*.
+> **Versión 0.5.2**, sin límite de tiempo. Los comentarios y fallos son bienvenidos en la pestaña *Issues*.
 
 [![Vídeo de demostración: el plugin funcionando en Le Mans Ultimate](media/demo-2m33.webp)](https://www.youtube.com/watch?v=8viDyta5et0)
 
@@ -284,11 +310,11 @@ pedal háptico configurado en SimHub (por ejemplo Simagic).
 
 ### En resumen
 
-- **Qué es:** un plugin de SimHub que hace vibrar tus bass shakers o tus pedales hápticos cuando la zaga del coche empieza a irse en Le Mans Ultimate.
-- **Instalar:** descarga el instalador, cierra SimHub, ejecútalo y elige qué instalar. Crea el efecto para bass shakers (ShakeIt) y para pedales hápticos, según lo que uses.
+- **Qué es:** un plugin de SimHub que hace vibrar tus bass shakers, tus pedales hápticos o tus Simucube ActivePedal cuando la zaga del coche empieza a irse en Le Mans Ultimate o iRacing (beta).
+- **Instalar:** descarga el instalador, cierra SimHub, ejecútalo y elige qué instalar. Crea el efecto para bass shakers (ShakeIt), pedales hápticos y Simucube ActivePedal, según lo que uses.
 - **Overlay:** el instalador añade también un overlay a Dash Studio (pestaña Overlays) que muestra la vista en vivo sobre el juego y se combina con cualquier otro overlay.
 - **Con dos ajustes basta:** **Slip Start** (cuándo empieza) y **Slip Max** (cuándo llega al 100%). El modo **Pro** añade curva, anticipación, suspensión, límite de gas y suavizado.
-- **Todo desde una pestaña:** enciende o apaga los bass shakers, los pedales hápticos y el overlay, y ajusta las frecuencias de shakers y pedales, sin entrar en ShakeIt ni en Dispositivos.
+- **Todo desde una pestaña:** enciende o apaga los bass shakers, los pedales hápticos, los Simucube ActivePedal y el overlay, y ajusta sus frecuencias, sin entrar en ShakeIt ni en Dispositivos.
 - **Un setup por coche:** guarda y carga setups con nombre con un clic.
 - **Todo explicado más abajo:** mira la [Guía de ajustes](#guía-de-ajustes).
 
@@ -303,50 +329,69 @@ El plugin lee del juego la telemetría de los dos **neumáticos traseros** y mid
 1. Mientras el coche agarra, el slip es pequeño y no pasa nada.
 2. Cuando **los dos** neumáticos traseros pasan de **Slip Start**, el efecto se activa con poca intensidad.
 3. Cuanto más se va la zaga, más fuerte se vuelve, hasta el 100% en **Slip Max**.
-4. El resultado es la vibración del **tren trasero**, que mueve tus bass shakers y tus pedales hápticos.
+4. El resultado es la vibración del **tren trasero**, que mueve tus bass shakers y tus pedales.
    **Basta con un body shaker.**
 
 Protecciones incluidas (no configurables): se mantiene apagado por debajo de unos 22 km/h, se silencia cuando las
 ruedas patinan por potencia (wheelspin) y se apaga si el refresco de la telemetría es demasiado lento.
+
+### Juegos
+
+- **Le Mans Ultimate** – el plugin nació para él y es el juego más probado. Lee cada neumático trasero.
+- **iRacing (beta)** – se detecta solo. iRacing no da el slip de cada neumático, así que el slip trasero se
+  **estima** con la velocidad del coche y su giro (yaw). Está probado en el juego, pero todavía no tiene filtro de wheelspin.
+- Otros juegos no están soportados. Si quieres ayudar con uno, el botón **Abrir el diagnóstico** guarda los números de
+  telemetría del juego en marcha (sin datos personales).
 
 ### Qué hace
 
 - Detecta el deslizamiento de las dos ruedas traseras, con anticipación y filtro de wheelspin.
 - Limita la vibración según el gas y la refuerza con el bote de la suspensión.
 - Pestaña de ajustes con modo **Simple** y modo **Pro**, una **vista en vivo** y **setups con nombre por coche**.
-- Desplegables de **bass shakers** y **pedales hápticos** con **interruptor on/off**, el **rango de frecuencia** (una barra
-  con dos tiradores) y una **gráfica en vivo** de la vibración. El interruptor y las frecuencias se aplican directamente en SimHub.
+- Desplegables de **bass shakers**, **pedales hápticos** y **Active Pedals (Simucube)** con **interruptor on/off**, el
+  **rango de frecuencia** (una barra con dos tiradores) y una **gráfica en vivo** de la vibración. El interruptor y las
+  frecuencias se aplican directamente en SimHub.
 - **Zonas de color** bajo las barras principales (verde recomendado, amarillo con cuidado, rojo no recomendable) y una raya en el valor por defecto.
+- Una **vista en vivo** con un GT visto desde arriba: sus ruedas delanteras giran con el volante, y las ruedas traseras,
+  el contorno y la línea del derrape cambian de color con el derrape (verde, y de amarillo a rojo).
 - Un **overlay para Dash Studio** (pestaña Overlays) que muestra la vista en vivo sobre el juego.
-- Crea solo el efecto **Huriz - LMU Oversteer** para **bass shakers** en ShakeIt (50 Hz base, 60 Hz alta, prioridad alta).
+- Crea solo el efecto **Huriz - Sim Car Oversteer** para **bass shakers** en ShakeIt (50 Hz base, 60 Hz alta, prioridad alta).
 - Crea el mismo efecto para **pedales hápticos** (por ejemplo Simagic), en el acelerador (45 Hz base, 50 Hz alta).
+- Crea el mismo efecto para los **Simucube ActivePedal**, en el acelerador (50 Hz base, 75 Hz alta).
 - Interfaz en español e inglés.
-- **Aviso de versión nueva:** te avisa en su pestaña cuando sale una versión más nueva (mira en GitHub como mucho una vez al día y no envía ningún dato; sin internet no hace nada).
+- **Aviso de versión nueva:** cuando sale una versión más nueva muestra un aviso en su pestaña y, 30 segundos después de arrancar SimHub, una ventana pequeña con **Descargar**, **Más tarde** y **No avisar de esta** (nunca con un juego en marcha). Mira en GitHub como mucho una vez al día y no envía ningún dato; sin internet no hace nada.
 
 ### Requisitos
 
 - Windows 10 u 11.
-- SimHub con tus **bass shakers** (ShakeIt: tarjeta de sonido y shakers) y/o tus **pedales hápticos** configurados.
-- Le Mans Ultimate.
+- SimHub con tus **bass shakers** (ShakeIt: tarjeta de sonido y shakers) y/o tus **pedales** (hápticos o Simucube
+  Active Pedals, en Dispositivos) configurados.
+- Le Mans Ultimate o iRacing (beta).
 
 ### Instalación
 
-1. Descarga `Huriz-LMU-Oversteer-Setup.exe` desde la [última release](../../releases/latest).
+1. Descarga `Huriz-Sim-Car-Oversteer-Setup.exe` desde la [última release](../../releases/latest).
 2. **Cierra SimHub** y ejecuta el instalador (pide permisos de administrador y usa el idioma de Windows).
 3. Elige la carpeta de SimHub (la que contiene `SimHubWPF.exe`).
-4. Elige qué instalar:
+4. Elige qué instalar. Cada dispositivo indica si SimHub lo tiene ("detectado" en verde, "no detectado" en
+   rojo); los detectados salen marcados y los demás se pueden marcar igualmente:
    - **Plugin** – siempre se instala.
-   - **Efecto para bass shakers** (ShakeIt Bass Shakers) – marcado.
-   - **Efecto para pedales hápticos** – cuando SimHub tiene pedales hápticos ("detectado" en verde, "no detectado" en rojo).
-     **Solo probado con pedales hápticos Simagic**; otras marcas no se han probado. Se crea solo en el pedal del acelerador; puedes cambiarlo después en SimHub (Dispositivos > tus pedales > Efectos).
+   - **Bass shakers** – el efecto en ShakeIt Bass Shakers. Marcado.
+   - **Pedales (Dispositivos de SimHub)** – dos opciones en el mismo grupo:
+     - **Pedales hápticos** – **solo probado con pedales hápticos Simagic**; otras marcas no se han probado.
+     - **Simucube ActivePedal (beta)** – en pruebas. El pedal necesita algo de presión para notar la vibración.
    - **Overlay de Dash Studio** – marcado.
-5. Abre SimHub y activa el plugin **Huriz - LMU Oversteer** cuando lo pida.
-6. Encontrarás el efecto **Huriz - LMU Oversteer**:
+
+   Los efectos de los pedales se crean en el **Default profile** de cada dispositivo, solo en el pedal del acelerador;
+   puedes cambiarlo después en SimHub (Dispositivos > tus pedales > Efectos). Si SimHub aún no tiene el dispositivo,
+   añádelo en Dispositivos y vuelve a ejecutar el instalador.
+5. Abre SimHub y activa el plugin **Huriz - Sim Car Oversteer** cuando lo pida.
+6. Encontrarás el efecto **Huriz - Sim Car Oversteer**:
    - **Bass shakers:** en ShakeIt, como una sola señal **Mono**. Basta con un body shaker. Con varios shakers, elige
      en cuáles suena en el mapa de canales de tu salida de sonido en ShakeIt.
-   - **Pedales hápticos:** en SimHub > Dispositivos > tus pedales > Efectos.
+   - **Pedales hápticos** y **Simucube ActivePedal:** en SimHub > Dispositivos > tus pedales > Efectos (Default profile).
 
-**Si vienes de LMU - Rear Slip Pro:** basta con ejecutar el instalador nuevo. Quita el plugin viejo y conserva tus
+**Si vienes de Huriz - LMU Oversteer o de LMU - Rear Slip Pro:** basta con ejecutar el instalador nuevo. Quita el plugin viejo y conserva tus
 ajustes, setups, efectos, posición en el menú de SimHub y diseños de overlays.
 
 Si nunca has abierto ShakeIt, ábrelo una vez y vuelve a ejecutar el instalador para que cree el efecto.
@@ -356,10 +401,10 @@ Pulsa *Más información* y luego *Ejecutar de todas formas*.
 
 ### Overlay (Dash Studio)
 
-El instalador añade a SimHub un overlay llamado **Huriz - LMU Oversteer**, para ver la vista en vivo sobre el juego.
+El instalador añade a SimHub un overlay llamado **Huriz - Sim Car Oversteer**, para ver la vista en vivo sobre el juego.
 
 1. Abre SimHub, entra en **Dash Studio** y abre la pestaña **Overlays**.
-2. Busca **Huriz - LMU Oversteer** y añádelo a tu diseño de overlays, junto a los demás que ya uses.
+2. Busca **Huriz - Sim Car Oversteer** y añádelo a tu diseño de overlays, junto a los demás que ya uses.
 3. Colócalo y ajusta el tamaño como quieras. SimHub gestiona su posición y su tamaño.
 
 En la pestaña del plugin, el desplegable **Overlay de Dash Studio** tiene el interruptor de la imagen y la opción
@@ -387,13 +432,19 @@ si no). Solo añade una plantilla a SimHub: nunca cambia tus diseños de overlay
   no pierde tus valores, porque los dos modos usan los mismos ajustes.
 - **ES / EN** – idioma de la pestaña. Por defecto sigue el de Windows.
 - **Guía** – abre esta guía en el navegador.
-- **Vista en vivo** – muestra lo que pasa mientras conduces. Tiene dos coches sobre el mismo centro:
-  el **coche gris claro** apunta hacia donde apuntan tus ruedas (sigue el volante) y el
+- **Vista en vivo** – muestra lo que pasa mientras conduces. Tiene dos coches (un GT visto desde arriba) sobre el
+  mismo centro: el **coche gris claro** apunta hacia donde apuntan tus ruedas (sigue el volante) y el
   **coche con contorno de color** es cómo va realmente el coche. El de color gira el mismo ángulo que el gris
-  **más** lo que se va de más; ese extra, en grados, sale escrito en el centro del coche y dibujado como un arco.
-  Los dos puntos a cada lado del arco marcan tu **Slip Start** y tu **Slip Max** (por ejemplo 3° y 12°).
+  **más** lo que se va de más; ese extra, en grados, sale escrito sobre el techo. Las **ruedas delanteras** de los dos
+  coches giran con el volante.
+  - **Línea de grados** – el arco sobre el coche. Un **punto verde** marca el centro, los **puntos amarillos** tu
+    **Slip Start** y los **rojos** tu **Slip Max** (por ejemplo 3° y 10°). El derrape se pinta sobre esta línea y
+    cambia de color con ella.
+  - **Colores** (en degradado continuo) – **verde** en el 80% de Slip Start, **amarillo** en Slip Start y **rojo** en
+    Slip Max. Las ruedas traseras, el contorno, los grados y el porcentaje se quedan en gris por debajo del 80% de Slip
+    Start; la línea del derrape va de **azul** en el centro a verde en el 80% (en recta apenas se ve). Cada rueda trasera
+    usa su propio derrape; el resto usa la rueda trasera que menos desliza, como el efecto.
   - **Porcentaje** (abajo en el centro) – cuánto se está yendo la zaga: 0% en Slip Start, 100% en Slip Max.
-    Las ruedas traseras y el contorno del coche pasan de gris a naranja y a rojo según crece el efecto.
   - **ABS y TC** – el eje delantero se ilumina en verde con "ABS", y el trasero con "TC", mientras actúan.
   - **Carretera** – una carretera curva detrás de los coches. Se curva hacia donde giras el volante y sus rayas
     avanzan con la velocidad.
@@ -404,7 +455,7 @@ si no). Solo añade una plantilla a SimHub: nunca cambia tus diseños de overlay
 - **Slip Start (°)** – cuánto tienen que deslizar de lado las ruedas traseras para que empiece el efecto.
   Más bajo = reacciona antes. Por defecto 3°.
 - **Slip Max (°)** – el slip con el que el efecto llega al 100%. Más alto = una subida más larga y gradual.
-  Por defecto 12°.
+  Por defecto 10°.
 - **Curva de progresión** *(Pro)* – la forma entre Slip Start y Slip Max. 1 = línea recta.
   Menos de 1: sube rápido al principio y se aplana. Más de 1: sube suave al principio y fuerte al final.
   Por defecto 0,5.
@@ -429,21 +480,21 @@ si no). Solo añade una plantilla a SimHub: nunca cambia tus diseños de overlay
 Bajo **Slip Start**, **Slip Max** y las barras de frecuencia hay **zonas de color**: verde recomendado, amarillo con
 cuidado, rojo no recomendable. Una rayita marca el valor por defecto.
 
-**Desplegables: Overlay de Dash Studio, Bass shakers y Pedales hápticos**
+**Desplegables: Overlay de Dash Studio, Bass shakers, Pedales hápticos y Active Pedals (Simucube)**
 
 Haz clic en el título para abrir o cerrar cada uno. Cerrado muestra un resumen a la derecha (por ejemplo "50–60 Hz"),
-y el plugin recuerda cuáles dejaste abiertos. **Bass shakers** y **Pedales hápticos** solo aparecen si su efecto está
-en SimHub, así ves solo lo que tienes.
+y el plugin recuerda cuáles dejaste abiertos. **Bass shakers**, **Pedales hápticos** y **Active Pedals (Simucube)**
+solo aparecen si su efecto está en SimHub, así ves solo lo que tienes.
 
-- **Interruptor on/off** (a la derecha del título) – enciende o apaga esa salida. En bass shakers y pedales hápticos
+- **Interruptor on/off** (a la derecha del título) – enciende o apaga esa salida. En bass shakers y pedales
   activa o desactiva el efecto **directamente en SimHub** (ShakeIt y Dispositivos), así que lo ves allí al momento.
-- **Frecuencia** (bass shakers y pedales hápticos) – una barra con dos tiradores. Izquierda: la frecuencia cuando
+- **Frecuencia** (bass shakers y pedales) – una barra con dos tiradores. Izquierda: la frecuencia cuando
   empieza el derrape. Derecha: la frecuencia con el derrape a tope. El plugin las escribe en el efecto de SimHub
   (**Frequency** y **High frequency**), así que ajústalas aquí y no en ShakeIt. Por defecto: 50–60 Hz en bass
-  shakers y 45–50 Hz en pedales hápticos (solo llegan hasta 50 Hz).
+  shakers, 45–50 Hz en pedales hápticos (solo llegan hasta 50 Hz) y 50–75 Hz en Simucube ActivePedal.
 - **Gráfica en vivo** – la vibración que manda el plugin en los últimos 8 segundos, de 0 a 100%. A la derecha: los Hz
   máximos, los de ahora (mientras vibra) y los mínimos. Con el interruptor apagado se queda plana.
-- **Prioridad alta** (bass shakers y pedales hápticos) – mientras vibra, el efecto tiene preferencia sobre los demás
+- **Prioridad alta** (bass shakers y pedales) – mientras vibra, el efecto tiene preferencia sobre los demás
   efectos de SimHub y se nota más claro. Es la misma opción "High priority" del efecto en SimHub: si la cambias aquí,
   cambia allí. Activada por defecto.
 - **Línea de estado** – en verde cuando el plugin ha encontrado su efecto en SimHub.
@@ -465,7 +516,7 @@ Guarda un ajuste para cada coche y cárgalo con un clic.
 
 ### Consejos de ajuste
 
-1. Empieza con los valores por defecto (Slip Start 3°, Slip Max 12°) y da unas vueltas.
+1. Empieza con los valores por defecto (Slip Start 3°, Slip Max 10°) y da unas vueltas.
 2. El efecto entra demasiado tarde o demasiado pronto → mueve **Slip Start**.
 3. Cuesta notar cómo sube (parece que salta a tope) → sube **Slip Max** y acerca la **curva** a 1.
 4. Quieres notar más el primer instante → baja un poco **Slip Start** o sube **Anticipación**.
@@ -508,7 +559,8 @@ Propiedades que publica el plugin (busca "HurizOversteer" en SimHub):
 | `RL`, `RR` | Salida del efecto del tren trasero (0-100), sin interruptor |
 | `Shaker.RL`, `Shaker.RR` | La misma salida para bass shakers: 0 con su interruptor apagado |
 | `Haptic.RL`, `Haptic.RR` | La misma salida para pedales hápticos: 0 con su interruptor apagado |
-| `Shaker.Frequency`, `Haptic.Frequency` | Frecuencia (Hz) que corresponde a la vibración de ahora, del mínimo al máximo |
+| `ActivePedal.RL`, `ActivePedal.RR` | La misma salida para Simucube ActivePedal: 0 con su interruptor apagado |
+| `Shaker.Frequency`, `Haptic.Frequency`, `ActivePedal.Frequency` | Frecuencia (Hz) que corresponde a la vibración de ahora, del mínimo al máximo |
 | `Expiry.DaysLeft` | Días que quedan hasta que caduque esta versión, o -1 si la versión no tiene límite |
 | `Debug.Rate` | Lecturas nuevas de telemetría por segundo |
 | `Debug.SlipRL/RR` | Ángulo de slip de cada rueda trasera (grados) |
@@ -520,7 +572,7 @@ Propiedades que publica el plugin (busca "HurizOversteer" en SimHub):
 | `Overlay.Image` | Ruta de la última imagen del overlay (la usa la plantilla de Dash Studio) |
 
 El efecto que se crea en ShakeIt es un Custom effect en Mono (JavaScript) que devuelve `$prop('HurizOversteerPlugin.Shaker.RL')`
-y `$prop('HurizOversteerPlugin.Shaker.RR')` en los canales traseros; en los pedales hápticos usa `Haptic.RL` y `Haptic.RR`.
+y `$prop('HurizOversteerPlugin.Shaker.RR')` en los canales traseros; en los pedales hápticos usa `Haptic.RL` y `Haptic.RR`, y en los Simucube ActivePedal `ActivePedal.RL` y `ActivePedal.RR`.
 
 ### Desinstalar
 
