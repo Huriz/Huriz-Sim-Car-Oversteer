@@ -18,7 +18,7 @@
 - **New-version window**: when there is a newer release, a small window offers Download, Later or "Don't remind me about
   this version". It shows once per SimHub start, 30 seconds after loading, and never while a game is running. The banner in the tab stays.
 - **Support the project**: a coloured strip at the top of the tab and a "Support the project" button next to Diagnostics
-  open a PayPal.Me link. The strip closes with the X and does not come back; the plugin stays free.
+  open a PayPal.Me link. The strip closes with the X and stays closed until you install again; the plugin stays free.
 
 ### 0.5.0 (not released on its own: included in 0.5.2)
 - **New name: Huriz - Sim Car Oversteer**, because it is no longer only for Le Mans Ultimate. Updating renames the effects in
@@ -152,7 +152,7 @@
 - **Ventana de versión nueva**: cuando hay una release más nueva, una ventana pequeña ofrece Descargar, Más tarde o "No
   avisar de esta versión". Sale una vez por arranque de SimHub, 30 segundos después de cargar, y nunca con un juego en marcha. El aviso de la pestaña sigue.
 - **Apoyar el proyecto**: una franja de color arriba de la pestaña y un botón "Apoyar el proyecto" junto a Diagnóstico
-  abren un enlace de PayPal.Me. La franja se cierra con la X y no vuelve a salir; el plugin sigue siendo gratis.
+  abren un enlace de PayPal.Me. La franja se cierra con la X y no vuelve a salir hasta que se instale otra vez; el plugin sigue siendo gratis.
 
 ### 0.5.0 (no se publicó sola: va incluida en la 0.5.2)
 - **Nuevo nombre: Huriz - Sim Car Oversteer**, porque ya no es solo para Le Mans Ultimate. Al actualizar se renombran solos
