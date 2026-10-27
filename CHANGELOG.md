@@ -1,5 +1,7 @@
 # Changelog
 
+**Latest version / Última versión: [v0.5.2](../../releases/latest)**
+
 [English](#english) | [Español](#español)
 
 ---

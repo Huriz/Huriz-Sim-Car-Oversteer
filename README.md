@@ -2,6 +2,8 @@
 
 *Formerly / antes: **Huriz - LMU Oversteer** and **LMU - Rear Slip Pro***
 
+**Latest version / Última versión: [v0.5.2](../../releases/latest)**
+
 [English](#english) | [Español](#español) · [Changelog](CHANGELOG.md)
 
 ---
