@@ -16,7 +16,7 @@ Shakers** and with the pedals set up in SimHub Devices (for example Simagic hapt
 
 > **Version 0.5.3**, with no time limit. Feedback and bug reports are welcome in the *Issues* tab.
 
-[![Demo video: the plugin running in Le Mans Ultimate](media/demo-2m33.webp)](https://www.youtube.com/watch?v=8viDyta5et0)
+[![Demo video: the plugin running in Le Mans Ultimate](media/lmu-0.5.3.webp)](https://www.youtube.com/watch?v=8viDyta5et0)
 
 ▶ [Watch the full video on YouTube](https://www.youtube.com/watch?v=8viDyta5et0) (3:45, with the settings and the drive)
 
@@ -327,7 +327,7 @@ Active Pedals).
 
 > **Versión 0.5.3**, sin límite de tiempo. Los comentarios y fallos son bienvenidos en la pestaña *Issues*.
 
-[![Vídeo de demostración: el plugin funcionando en Le Mans Ultimate](media/demo-2m33.webp)](https://www.youtube.com/watch?v=8viDyta5et0)
+[![Vídeo de demostración: el plugin funcionando en Le Mans Ultimate](media/lmu-0.5.3.webp)](https://www.youtube.com/watch?v=8viDyta5et0)
 
 ▶ [Ver el vídeo completo en YouTube](https://www.youtube.com/watch?v=8viDyta5et0) (3:45, con los ajustes y la conducción)
 
