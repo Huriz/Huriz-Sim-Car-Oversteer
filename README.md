@@ -2,7 +2,7 @@
 
 *Formerly / antes: **Huriz - LMU Oversteer** and **LMU - Rear Slip Pro***
 
-**Latest version / Última versión: [v0.5.2](../../releases/latest)**
+**Latest version / Última versión: [v0.5.3](../../releases/latest)**
 
 [English](#english) | [Español](#español) · [Changelog](CHANGELOG.md)
 
@@ -14,7 +14,7 @@ A **SimHub plugin for sim racing** (**Le Mans Ultimate** and **iRacing, beta**) 
 **Simucube ActivePedal** vibrate when the rear wheels lose grip (rear-end slides). It works with **ShakeIt Bass
 Shakers** and with the pedals set up in SimHub Devices (for example Simagic haptic pedals or Simucube Active Pedals).
 
-> **Version 0.5.2**, with no time limit. Feedback and bug reports are welcome in the *Issues* tab.
+> **Version 0.5.3**, with no time limit. Feedback and bug reports are welcome in the *Issues* tab.
 
 [![Demo video: the plugin running in Le Mans Ultimate](media/demo-2m33.webp)](https://www.youtube.com/watch?v=8viDyta5et0)
 
@@ -44,23 +44,23 @@ how many degrees each tyre is moving sideways compared with the direction it poi
 4. The result is the vibration of the **rear axle**, which drives your bass shakers and your pedals.
    **One body shaker is enough.**
 
-Built-in protections (not configurable): it stays off below about 22 km/h, it is muted while the wheels are
-spinning under power (wheelspin), and it switches off if the telemetry refresh is too slow.
+Built-in protections: it stays off below 15 km/h (adjustable with **Speed Start**) and it switches off if the
+telemetry refresh is too slow. Spinning the rear wheels under power is not muted: if the rear slides, it vibrates, with or without throttle.
 
 ### Games
 
 - **Le Mans Ultimate** – the plugin was made for it and it is the most tested game. It reads each rear tyre.
 - **iRacing (beta)** – detected automatically. iRacing does not give the slip of each tyre, so the rear slip is
   **estimated** from the car speed and its yaw rate. Still in testing.
-- Other games are not supported. If you want to help with one, the **Open the diagnostics** button saves the telemetry
-  numbers of the game that is running (no personal data).
+- Other games are not supported. If you want to help with one, turn on the diagnostics switch: it saves the telemetry
+  numbers of the game that is running (no personal data); **Open the diagnostics** shows the file.
 
 ### What it does
 
-- Detects slip on both rear wheels, with anticipation and a wheelspin filter.
+- Detects slip on both rear wheels, with anticipation.
 - Limits the effect by throttle and boosts it with suspension bounce.
 - Settings tab with a **Simple** mode and a **Pro** mode, a **live view**, and **named setups per car**.
-- **Bass shakers**, **haptic pedals** and **Active Pedals (Simucube)** drop-downs with an **on/off switch**, the
+- **Bass shakers**, **Simagic Haptic Pedals** and **Simucube ActivePedal** drop-downs with an **on/off switch**, the
   **frequency range** (one bar with two handles) and a **live graph** of the vibration. The switch and the frequencies
   are applied directly in SimHub.
 - **Colour zones** under the main bars (green recommended, yellow with care, red not recommended) and a tick at the default value.
@@ -126,8 +126,8 @@ The road is in the **Image** group of the settings.
 The overlay shows the same drawing as the live view, with a single percentage at the bottom centre: **0% at Slip Start
 and 100% at Slip Max**, so you can see at a glance how far into the slide you are.
 
-The plugin draws the overlay as an image about 15 times per second while the game is running (once per second
-otherwise). It only adds one template to SimHub: it never changes your existing overlay layouts.
+The plugin draws the overlay as an image only when something changes (up to about 15 times per second while the game
+is running); with the car stopped, in the pits or in the menus it does nothing. It only adds one template to SimHub: it never changes your existing overlay layouts.
 
 ### Settings guide
 
@@ -137,9 +137,13 @@ Open it from the **Guide** button in the plugin tab.
 
 - **Loaded profile** (green, on the right of the header) – the setup that is currently loaded. With a narrow window it
   moves to its own line.
+- **Game** (blue, next to the loaded profile) – the game SimHub is running right now. It changes on its own when you
+  switch games and hides when no game is running.
 - **Check for updates** (next to the version) – checks GitHub right away for a newer version and tells you the result.
 - **New version strip** (blue, under the title) – appears only when a newer version is out. **Download** opens the
   release page; **Don't remind me about this version** hides it until the next one.
+- **Support strip** (purple, under the title) – a short note that the plugin is free, with a button that opens the PayPal
+  link. Close it with the **X**; it comes back after each installation. It is never shown in the game.
 - **Simple / Pro** – Simple shows only Slip Start and Slip Max. Pro adds the rest. Switching between them
   never loses your values, because both modes use the same settings.
 - **ES / EN** – language of the tab. It follows Windows by default.
@@ -166,6 +170,8 @@ Open it from the **Guide** button in the plugin tab.
   Lower = it reacts earlier. Default 3°.
 - **Slip Max (°)** – the slip at which the effect reaches 100%. Higher = a longer, more gradual build-up.
   Default 10°.
+- **Speed Start** – minimum speed: below it the effect does not switch on (red part of the bar), above it, it
+  does (green part). 0–60 km/h. Default 15 km/h.
 - **Progression curve** *(Pro)* – the shape between Slip Start and Slip Max. 1 = straight line.
   Below 1 the effect rises fast at first and flattens; above 1 it rises gently first and strongly at the end.
   Default 0.5.
@@ -175,7 +181,8 @@ Open it from the **Guide** button in the plugin tab.
 - **Suspension influence** *(Pro)* – extra boost from suspension bounce, up to the percentage you set.
   With 50% and a lot of bounce the output can rise up to x1.5. 0 = no boost. Default 50%.
 - **Throttle limit** *(Pro)* – above this throttle the effect switches off, with a short fade of about 5%.
-  100% = never. Handy if you don't want it during power oversteer. Default 100%.
+  100% = never. Handy if you don't want it during power oversteer. Default 100%. The bar is green where it works and
+  red above the value, where it switches off.
 - **Smoothing** *(Pro)* – how fast the vibration rises and falls when slip changes.
   **Fast** follows the car instantly and feels sharper, **Normal** is balanced, **Soft** is slower and rounder
   but a little delayed. It scales the rise and fall times: roughly 12/29 ms (Fast), 24/58 ms (Normal) and
@@ -190,11 +197,11 @@ Open it from the **Guide** button in the plugin tab.
 Under **Slip Start**, **Slip Max** and the frequency bars there are **colour zones**: green recommended, yellow with
 care, red not recommended. A small tick marks the default value.
 
-**Drop-downs: Dash Studio overlay, Bass shakers, Haptic pedals and Active Pedals (Simucube)**
+**Drop-downs: Dash Studio overlay, Bass shakers, Simagic Haptic Pedals and Simucube ActivePedal**
 
 Click the title to open or close each one. Closed, it shows a summary on the right (for example "50–60 Hz"),
-and the plugin remembers which ones you left open. **Bass shakers**, **Haptic pedals** and **Active Pedals
-(Simucube)** only appear when their effect is in SimHub, so you only see what you have.
+and the plugin remembers which ones you left open. **Bass shakers**, **Simagic Haptic Pedals** and **Simucube
+ActivePedal** only appear when their effect is in SimHub, so you only see what you have.
 
 - **On/off switch** (right of the title) – turns that output on or off. For bass shakers and pedals it
   turns the effect on or off **directly in SimHub** (ShakeIt and Devices), so you see it there at once.
@@ -213,6 +220,10 @@ and the plugin remembers which ones you left open. **Bass shakers**, **Haptic pe
 
 - **Reset to defaults** – puts every setting back to the recommended values (it keeps your mode and language).
 - **Save settings** – saves the settings now. They are also saved when SimHub closes.
+- **Open the diagnostics** (box under the setups) – opens the folder with `diagnostico.txt`, the file to send so the plugin
+  can be tuned for a game. It only has telemetry numbers and the car and track names. The switch next to it turns the
+  file on (it is **off by default**, so nothing is written until you turn it on).
+- **Support the project** (same box, purple) – opens the PayPal link. The plugin is free.
 
 **Setups (per car)**
 
@@ -247,10 +258,13 @@ Save one set of settings for each car and load it with one click.
 - **No vibration.** Check that the plugin is enabled in SimHub, that the game is running, and that the switch of that
   output is on in the plugin tab. The live graph and the live view should react when the rear slides. On bass
   shakers, check in the channel map of your sound output in ShakeIt that the effect is ON for your shaker.
-- **Bass shakers or Haptic pedals don't appear in the plugin tab.** The plugin can't find its effect in SimHub.
+- **Bass shakers or Simagic Haptic Pedals don't appear in the plugin tab.** The plugin can't find its effect in SimHub.
   Close SimHub and run the installer again with that option ticked.
 - **The frequencies in ShakeIt don't match the plugin.** Set them in the plugin tab: it writes them into the effect.
   If you change them in ShakeIt, the plugin puts its own values back the next time you open its tab.
+- **The Simucube ActivePedal vibrates weakly or not at all.** The pedal needs some pressure to feel the vibration. Check
+  the strength of the effect in SimHub (Devices > Simucube Active Pedals > Effects) and which pedal it is on: the installer
+  puts it on the throttle.
 - **The tab says this version expired.** Versions before 0.3.5 stop working on a date. Download the latest release,
   which has no time limit.
 - **The haptic pedal keeps vibrating after a slide until you pause the game.** Fixed in 0.3.5: update to the latest release.
@@ -284,10 +298,17 @@ Properties published by the plugin (search "HurizOversteer" in SimHub):
 The effect created in ShakeIt is a Mono Custom effect (JavaScript) that returns `$prop('HurizOversteerPlugin.Shaker.RL')`
 and `$prop('HurizOversteerPlugin.Shaker.RR')` on the rear channels; on the haptic pedals it uses `Haptic.RL` and `Haptic.RR`, and on the Simucube ActivePedal `ActivePedal.RL` and `ActivePedal.RR`.
 
+**Files** (in `%LOCALAPPDATA%\HurizOversteer\`): `diagnostico.txt` (only with the diagnostics switch on: 4 lines per second while a game runs; in iRacing it also
+shows revs, gear and the wheelspin estimate), `errores.log` (errors the plugin hit) and the effect search logs. They are
+emptied every time SimHub starts.
+
+**Games:** the SimHub properties each game is read from are in a small JSON file per game inside the plugin. To override or
+add one, drop a `.json` file into `PluginsData\Common\HurizOversteer.Games` in the SimHub folder.
+
 ### Uninstall
 
 Use *Settings > Apps* in Windows (close SimHub first). Uninstalling removes everything the plugin added: the effects in
-ShakeIt and on the haptic pedals, the plugin settings and setups (also the copies SimHub keeps in its own backup
+ShakeIt and on the pedals, the plugin settings and setups (also the copies SimHub keeps in its own backup
 folder), and the backups made by the installer. Your other effects are not touched.
 
 ### License
@@ -304,7 +325,7 @@ Plugin de SimHub para **simracing** (**Le Mans Ultimate** e **iRacing, beta**) q
 Shakers** y con los pedales configurados en Dispositivos de SimHub (por ejemplo pedales hápticos Simagic o Simucube
 Active Pedals).
 
-> **Versión 0.5.2**, sin límite de tiempo. Los comentarios y fallos son bienvenidos en la pestaña *Issues*.
+> **Versión 0.5.3**, sin límite de tiempo. Los comentarios y fallos son bienvenidos en la pestaña *Issues*.
 
 [![Vídeo de demostración: el plugin funcionando en Le Mans Ultimate](media/demo-2m33.webp)](https://www.youtube.com/watch?v=8viDyta5et0)
 
@@ -334,23 +355,23 @@ El plugin lee del juego la telemetría de los dos **neumáticos traseros** y mid
 4. El resultado es la vibración del **tren trasero**, que mueve tus bass shakers y tus pedales.
    **Basta con un body shaker.**
 
-Protecciones incluidas (no configurables): se mantiene apagado por debajo de unos 22 km/h, se silencia cuando las
-ruedas patinan por potencia (wheelspin) y se apaga si el refresco de la telemetría es demasiado lento.
+Protecciones incluidas: se mantiene apagado por debajo de 15 km/h (se cambia con **Speed Start**) y se apaga si
+el refresco de la telemetría es demasiado lento. El patinazo de las traseras al acelerar no se silencia: si la zaga desliza, vibra, con gas o sin él.
 
 ### Juegos
 
 - **Le Mans Ultimate** – el plugin nació para él y es el juego más probado. Lee cada neumático trasero.
 - **iRacing (beta)** – se detecta solo. iRacing no da el slip de cada neumático, así que el slip trasero se
   **estima** con la velocidad del coche y su giro (yaw). En pruebas.
-- Otros juegos no están soportados. Si quieres ayudar con uno, el botón **Abrir el diagnóstico** guarda los números de
-  telemetría del juego en marcha (sin datos personales).
+- Otros juegos no están soportados. Si quieres ayudar con uno, enciende el interruptor del diagnóstico: guarda los números de
+  telemetría del juego en marcha (sin datos personales); **Abrir el diagnóstico** muestra el archivo.
 
 ### Qué hace
 
-- Detecta el deslizamiento de las dos ruedas traseras, con anticipación y filtro de wheelspin.
+- Detecta el deslizamiento de las dos ruedas traseras, con anticipación.
 - Limita la vibración según el gas y la refuerza con el bote de la suspensión.
 - Pestaña de ajustes con modo **Simple** y modo **Pro**, una **vista en vivo** y **setups con nombre por coche**.
-- Desplegables de **bass shakers**, **pedales hápticos** y **Active Pedals (Simucube)** con **interruptor on/off**, el
+- Desplegables de **bass shakers**, **Simagic Haptic Pedals** y **Simucube ActivePedal** con **interruptor on/off**, el
   **rango de frecuencia** (una barra con dos tiradores) y una **gráfica en vivo** de la vibración. El interruptor y las
   frecuencias se aplican directamente en SimHub.
 - **Zonas de color** bajo las barras principales (verde recomendado, amarillo con cuidado, rojo no recomendable) y una raya en el valor por defecto.
@@ -416,8 +437,8 @@ La carretera está en el grupo **Imagen** de los ajustes.
 El overlay muestra el mismo dibujo que la vista en vivo, con un solo porcentaje abajo en el centro: **0% en Slip Start
 y 100% en Slip Max**, para ver de un vistazo cuánto se está yendo la zaga.
 
-El plugin dibuja el overlay como una imagen unas 15 veces por segundo con el juego en marcha (una vez por segundo
-si no). Solo añade una plantilla a SimHub: nunca cambia tus diseños de overlays.
+El plugin dibuja el overlay como una imagen solo cuando algo cambia (hasta unas 15 veces por segundo con el juego en marcha);
+con el coche parado, en boxes o en los menús no hace nada. Solo añade una plantilla a SimHub: nunca cambia tus diseños de overlays.
 
 ### Guía de ajustes
 
@@ -427,9 +448,13 @@ si no). Solo añade una plantilla a SimHub: nunca cambia tus diseños de overlay
 
 - **Perfil cargado** (verde, a la derecha de la cabecera) – el setup que está cargado ahora. Con la ventana estrecha
   baja a su propia línea.
+- **Juego** (azul, al lado del perfil cargado) – el juego que SimHub tiene en marcha. Cambia solo al cambiar de juego y
+  se oculta cuando no hay ninguno.
 - **Buscar actualizaciones** (junto a la versión) – mira en GitHub al momento si hay una versión más nueva y te dice el resultado.
 - **Franja de versión nueva** (azul, bajo el título) – solo aparece cuando hay una versión más nueva. **Descargar** abre
   la página de la release; **No avisar de esta versión** la oculta hasta la siguiente.
+- **Franja de apoyo** (violeta, bajo el título) – una nota corta de que el plugin es gratis, con un botón que abre el enlace de
+  PayPal. Se cierra con la **X** y vuelve a salir tras cada instalación. Nunca se muestra dentro del juego.
 - **Simple / Pro** – Simple muestra solo Slip Start y Slip Max. Pro añade el resto. Cambiar de uno a otro
   no pierde tus valores, porque los dos modos usan los mismos ajustes.
 - **ES / EN** – idioma de la pestaña. Por defecto sigue el de Windows.
@@ -458,6 +483,8 @@ si no). Solo añade una plantilla a SimHub: nunca cambia tus diseños de overlay
   Más bajo = reacciona antes. Por defecto 3°.
 - **Slip Max (°)** – el slip con el que el efecto llega al 100%. Más alto = una subida más larga y gradual.
   Por defecto 10°.
+- **Speed Start** – velocidad mínima: por debajo el efecto no se activa (parte roja de la barra), por encima sí
+  (parte verde). De 0 a 60 km/h. Por defecto 15 km/h.
 - **Curva de progresión** *(Pro)* – la forma entre Slip Start y Slip Max. 1 = línea recta.
   Menos de 1: sube rápido al principio y se aplana. Más de 1: sube suave al principio y fuerte al final.
   Por defecto 0,5.
@@ -467,7 +494,8 @@ si no). Solo añade una plantilla a SimHub: nunca cambia tus diseños de overlay
 - **Influencia de suspensión** *(Pro)* – refuerzo extra por el bote de la suspensión, hasta el porcentaje que
   pongas. Con 50% y mucho bote la salida puede subir hasta x1,5. 0 = sin refuerzo. Por defecto 50%.
 - **Límite de gas** *(Pro)* – con más gas que este valor el efecto se apaga, con una transición corta de
-  un 5%. 100% = nunca. Útil si no lo quieres durante el sobreviraje por potencia. Por defecto 100%.
+  un 5%. 100% = nunca. Útil si no lo quieres durante el sobreviraje por potencia. Por defecto 100%. La barra
+  está en verde donde funciona y en rojo por encima del valor, donde se apaga.
 - **Suavizado** *(Pro)* – con qué rapidez sube y baja la vibración cuando cambia el slip.
   **Rápido** sigue al coche al instante y es más seco, **Normal** es equilibrado, **Suave** es más lento y
   redondo pero con un pequeño retraso. Escala los tiempos de subida y bajada: aproximadamente 12/29 ms (Rápido),
@@ -482,10 +510,10 @@ si no). Solo añade una plantilla a SimHub: nunca cambia tus diseños de overlay
 Bajo **Slip Start**, **Slip Max** y las barras de frecuencia hay **zonas de color**: verde recomendado, amarillo con
 cuidado, rojo no recomendable. Una rayita marca el valor por defecto.
 
-**Desplegables: Overlay de Dash Studio, Bass shakers, Pedales hápticos y Active Pedals (Simucube)**
+**Desplegables: Overlay de Dash Studio, Bass shakers, Simagic Haptic Pedals y Simucube ActivePedal**
 
 Haz clic en el título para abrir o cerrar cada uno. Cerrado muestra un resumen a la derecha (por ejemplo "50–60 Hz"),
-y el plugin recuerda cuáles dejaste abiertos. **Bass shakers**, **Pedales hápticos** y **Active Pedals (Simucube)**
+y el plugin recuerda cuáles dejaste abiertos. **Bass shakers**, **Simagic Haptic Pedals** y **Simucube ActivePedal**
 solo aparecen si su efecto está en SimHub, así ves solo lo que tienes.
 
 - **Interruptor on/off** (a la derecha del título) – enciende o apaga esa salida. En bass shakers y pedales
@@ -505,6 +533,10 @@ solo aparecen si su efecto está en SimHub, así ves solo lo que tienes.
 
 - **Restablecer valores** – devuelve todos los ajustes a los valores recomendados (mantiene tu modo e idioma).
 - **Guardar configuración** – guarda los ajustes ya. También se guardan al cerrar SimHub.
+- **Abrir el diagnóstico** (recuadro bajo los setups) – abre la carpeta con `diagnostico.txt`, el archivo que hay que mandar para
+  ajustar el plugin a un juego. Solo tiene números de telemetría y el nombre del coche y de la pista. El interruptor de al
+  lado lo activa (viene **apagado por defecto**: no se escribe nada hasta que lo enciendas).
+- **Apoyar el proyecto** (mismo recuadro, violeta) – abre el enlace de PayPal. El plugin es gratis.
 
 **Setups (por coche)**
 
@@ -539,10 +571,13 @@ Guarda un ajuste para cada coche y cárgalo con un clic.
 - **No vibra.** Comprueba que el plugin está activado en SimHub, que el juego está en marcha y que el interruptor de
   esa salida está encendido en la pestaña del plugin. La gráfica y la vista en vivo deberían reaccionar cuando la
   zaga se va. En bass shakers, comprueba en el mapa de canales de tu salida de sonido en ShakeIt que el efecto está en ON para tu shaker.
-- **Bass shakers o Pedales hápticos no salen en la pestaña del plugin.** El plugin no encuentra su efecto en SimHub.
+- **Bass shakers o Simagic Haptic Pedals no salen en la pestaña del plugin.** El plugin no encuentra su efecto en SimHub.
   Cierra SimHub y vuelve a ejecutar el instalador con esa casilla marcada.
 - **Las frecuencias de ShakeIt no coinciden con las del plugin.** Ajústalas en la pestaña del plugin: las escribe en
   el efecto. Si las cambias en ShakeIt, el plugin vuelve a poner las suyas la próxima vez que abres su pestaña.
+- **El Simucube ActivePedal vibra poco o nada.** El pedal necesita algo de presión para notar la vibración. Revisa la fuerza
+  del efecto en SimHub (Dispositivos > Simucube Active Pedals > Efectos) y en qué pedal está: el instalador lo pone en el
+  acelerador.
 - **La pestaña dice que esta versión caducó.** Las versiones anteriores a la 0.3.5 dejan de funcionar en una fecha.
   Descarga la última release, que no tiene límite de tiempo.
 - **El pedal háptico sigue vibrando después de un derrape hasta que pausas el juego.** Corregido en la 0.3.5: actualiza a la última release.
@@ -576,10 +611,17 @@ Propiedades que publica el plugin (busca "HurizOversteer" en SimHub):
 El efecto que se crea en ShakeIt es un Custom effect en Mono (JavaScript) que devuelve `$prop('HurizOversteerPlugin.Shaker.RL')`
 y `$prop('HurizOversteerPlugin.Shaker.RR')` en los canales traseros; en los pedales hápticos usa `Haptic.RL` y `Haptic.RR`, y en los Simucube ActivePedal `ActivePedal.RL` y `ActivePedal.RR`.
 
+**Archivos** (en `%LOCALAPPDATA%\HurizOversteer\`): `diagnostico.txt` (solo con el interruptor del diagnóstico encendido: 4 líneas por segundo con un juego en marcha; en iRacing
+también muestra revoluciones, marcha y la estimación de wheelspin), `errores.log` (errores del plugin) y los registros de
+búsqueda de efectos. Se vacían cada vez que arranca SimHub.
+
+**Juegos:** las propiedades de SimHub de las que se lee cada juego están en un pequeño fichero JSON por juego dentro del
+plugin. Para sustituir o añadir uno, copia un `.json` en `PluginsData\Common\HurizOversteer.Games` dentro de la carpeta de SimHub.
+
 ### Desinstalar
 
 Desde *Configuración > Aplicaciones* de Windows (cierra SimHub antes). Al desinstalar se borra todo lo que añadió el
-plugin: los efectos de ShakeIt y de los pedales hápticos, los ajustes y setups del plugin (también las copias que
+plugin: los efectos de ShakeIt y de los pedales, los ajustes y setups del plugin (también las copias que
 SimHub guarda en su propia carpeta de copias de seguridad) y las copias de seguridad del instalador. Tus otros efectos no se tocan.
 
 ### Licencia

@@ -1,12 +1,38 @@
 # Changelog
 
-**Latest version / Última versión: [v0.5.2](../../releases/latest)**
+**Latest version / Última versión: [v0.5.3](../../releases/latest)**
 
 [English](#english) | [Español](#español)
 
 ---
 
 ## English
+
+### 0.5.3
+- **Power oversteer always vibrates (LMU and iRacing)**: the wheelspin filter is gone. It muted the effect with more than
+  30 % throttle when the rear wheels spun, even if the rear was stepping out (a drift under power). Now, if the rear slides,
+  it vibrates, with or without throttle.
+- **iRacing: more accurate slip angle (testing)**: the plugin now measures the slide in two places (the whole car and the
+  rear axle) and uses the smaller one. It no longer vibrates in normal fast corners (the tyre working, not sliding) nor
+  when you are almost stopped turning the wheel, and the live view is no longer drawn crossed. When the rear really steps
+  out, both rise and it vibrates as before.
+- **iRacing: wheelspin estimate (testing)**: iRacing does not give the speed of each wheel, so the plugin estimates the
+  wheelspin from the engine revs, the gear and the car speed. It is only shown in the diagnostics file (revs, gear and the
+  estimate); it does not change the effect.
+- **Diagnostics switch**: next to **Open the diagnostics** there is a switch to turn the diagnostics file on or off. It is
+  **off by default** (off, it writes nothing); turn it on only when you need to send a diagnostics file. The file is now
+  more complete (4 readings per second, throttle, target and more).
+- **Minimum speed 15 km/h** (it was about 22 km/h): below that the effect stays off. It applies to everyone, also to
+  saved settings. It can be changed with the new **Speed Start** slider (Simple and Pro) (0–60 km/h; red below the value, green above).
+- **Throttle limit (Pro) in colour**: green where the effect works and red above the value, where it switches off
+  (at 100% it is all green).
+- **Running game in the header**: next to the loaded profile, a blue box shows the game SimHub is running
+  (e.g. "Game: iRacing"). It changes on its own and hides with no game.
+- **Brand in the device names**: the drop-downs and the installer say **Simagic Haptic Pedals** and **Simucube
+  ActivePedal**, so each device is easy to find as more are added.
+- **Tab**: the diagnostics and support buttons are in a box under the setups; the support strip at the top comes back
+  with each installation and closes with the X.
+- **Installer**: the pedals (Simagic haptics and Simucube ActivePedal) share one group, with a short note about each one.
 
 ### 0.5.2 (includes 0.4.0, 0.5.0 and 0.5.1, which were not released on their own)
 - **Repository renamed to Huriz-Sim-Car-Oversteer** (the LMU is gone from the name). Old links keep working, and versions
@@ -141,6 +167,33 @@
 ---
 
 ## Español
+
+### 0.5.3
+- **El sobreviraje con gas siempre vibra (LMU e iRacing)**: se quita el filtro de wheelspin. Silenciaba el efecto con más
+  del 30 % de gas cuando patinaban las traseras, aunque el culo se estuviera yendo de lado (un drift acelerando). Ahora, si
+  la zaga desliza, vibra, con gas o sin él.
+- **iRacing: ángulo de deslizamiento más fiel (en pruebas)**: el plugin mide ahora el deslizamiento en dos sitios (el coche
+  entero y el eje trasero) y usa el menor. Ya no vibra en curvas rápidas normales (el neumático trabajando, sin deslizar) ni
+  casi parado girando el volante, y la vista en vivo ya no sale cruzada. Cuando el culo se va de verdad, suben los dos y
+  vibra como antes.
+- **iRacing: estimación del patinazo (en pruebas)**: iRacing no da la velocidad de cada rueda, así que el plugin estima el
+  patinazo con las revoluciones del motor, la marcha y la velocidad del coche. Solo se muestra en el fichero de diagnóstico
+  (revoluciones, marcha y la estimación); no cambia el efecto.
+- **Interruptor del diagnóstico**: al lado de **Abrir el diagnóstico** hay un interruptor para encender o apagar el fichero de
+  diagnóstico. Viene **apagado por defecto** (apagado no escribe nada); actívalo solo cuando tengas que mandar un
+  diagnóstico. El fichero es más completo (4 lecturas por segundo, gas, objetivo y más).
+- **Velocidad mínima de 15 km/h** (antes unos 22 km/h): por debajo el efecto va apagado. Vale para todos, también para
+  ajustes guardados. Se cambia con la barra nueva **Speed Start** (Simple y Pro) (0–60 km/h; rojo por debajo del valor, verde por
+  encima).
+- **Límite de gas (Pro) en colores**: verde donde funciona el efecto y rojo por encima del valor, donde se apaga (al 100 %
+  todo verde).
+- **Juego en marcha en la cabecera**: al lado del perfil cargado, un recuadro azul muestra el juego que tiene SimHub en
+  marcha (por ejemplo «Juego: iRacing»). Cambia solo y se oculta sin juego.
+- **Marca en el nombre de los dispositivos**: los desplegables y el instalador dicen **Simagic Haptic Pedals** y
+  **Simucube ActivePedal**, para que cada dispositivo se encuentre fácil cuando haya más.
+- **Pestaña**: los botones de diagnóstico y apoyo van en un recuadro bajo los setups; la franja de apoyo de arriba vuelve a
+  salir con cada instalación y se cierra con la X.
+- **Instalador**: los pedales (hápticos Simagic y Simucube ActivePedal) comparten un grupo, con una nota breve de cada uno.
 
 ### 0.5.2 (incluye la 0.4.0, la 0.5.0 y la 0.5.1, que no se publicaron solas)
 - **Repositorio renombrado a Huriz-Sim-Car-Oversteer** (ya no lleva LMU en el nombre). Los enlaces antiguos siguen
