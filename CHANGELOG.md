@@ -1,12 +1,38 @@
 # Changelog
 
-**Latest version / Última versión: [v0.5.3](../../releases/latest)**
+**Latest version / Última versión: [v0.6.4](../../releases/latest)**
 
 [English](#english) | [Español](#español)
 
 ---
 
 ## English
+
+### 0.6.4 (includes the 0.6.x test versions, which were not released on their own)
+- **New games: rFactor 2, Automobilista 2 (beta) and RaceRoom (beta).** rFactor 2 works like Le Mans Ultimate. Automobilista 2
+  and RaceRoom use the same method as iRacing. **iRacing is no longer beta.** (In Automobilista 2 turn on the shared memory option.)
+- **iRacing, Automobilista 2 and RaceRoom learn your car by themselves.** These games do not say how much each tyre slides, so the
+  plugin needs to calculate the distance from the centre of gravity to the rear axle. It learns it while you drive between
+  15 and 30 km/h with the wheel turned, saves it for each car and stops when the car has its samples (10 by default, up to 50).
+  The faster the car goes while a reading is taken, the shorter the distance comes out, so every reading is **corrected for its
+  speed** (the same table for every car and game). In our tests the learned distance was within about 3 % of the real one.
+- **New Samples tab** (next to General): a table with your cars for each game (distance, averages, samples, done), a click on
+  the car name searches its wheelbase and weight distribution, the pencil lets you type the value or calculate it from
+  wheelbase × front weight, and there are reset, delete, refresh, open-file, export and import buttons. Learning settings: 10 to 50 samples per car.
+- **Learning marks in the live view and the overlay**: little dots that fill with each sample and a speed bar that shows when you
+  are in the right speed range.
+- **Profiles**: the **Bass shakers**, **haptic pedals** and **Simucube ActivePedal** cards show a table with every SimHub profile
+  (high priority, frequency, active, reset). The loaded profile is in green and a click on a name loads it in SimHub (if SimHub changes profile
+  by itself, the plugin follows). What you change in SimHub shows up in the table and the other way round. The switch at the top of the card is the one of
+  the loaded profile, and the live graph shows that profile. A **new button** copies the effect into the profiles that do not have it.
+- **The installer puts the effect in every profile**, not only the default one (it never creates a profile), and it keeps a
+  log, `install.log`, with what each step did, to find problems faster.
+- **New device: Simnet Haptic Pedals (beta)**, with the same options as the Simagic pedals. Haptic pedals now go down to 20 Hz (was 25).
+- **A more reliable slide in iRacing, Automobilista 2 and RaceRoom**: the slide is measured at the rear axle with the learned distance, and when the
+  whole car and the axle go to opposite sides it counts as no slide (it fixed the live view drawn to the wrong side at low speed).
+- **Speed Start uses the speed of the rear axle in every direction** (all games): the effect no longer cuts out in the middle of a spin with the car sideways.
+- **Overlay**: with the plugin off, an expired version or no game running, the overlay shows nothing instead of freezing on the last picture.
+- **Diagnostics**: the files are now `diagnostics.txt` and `errors.log` (in English). The diagnostics switch is still off by default.
 
 ### 0.5.3
 - **Power oversteer always vibrates (LMU and iRacing)**: the wheelspin filter is gone. It muted the effect with more than
@@ -167,6 +193,32 @@
 ---
 
 ## Español
+
+### 0.6.4 (incluye las versiones de prueba 0.6.x, que no salieron por separado)
+- **Juegos nuevos: rFactor 2, Automobilista 2 (beta) y RaceRoom (beta).** rFactor 2 funciona como Le Mans Ultimate. Automobilista 2
+  y RaceRoom usan el mismo método que iRacing. **iRacing deja de ser beta.** (En Automobilista 2 hay que activar la opción de memoria compartida.)
+- **iRacing, Automobilista 2 y RaceRoom aprenden tu coche solos.** Estos juegos no dicen cuánto desliza cada neumático, así que el
+  plugin necesita calcular la distancia del centro de gravedad al eje trasero. La aprende mientras conduces entre
+  15 y 30 km/h con el volante girado, la guarda para cada coche y termina cuando el coche tiene sus muestras (10 por defecto, hasta 50).
+  Cuanto más rápido va el coche al tomar una lectura, más corta sale la distancia, así que cada lectura se **corrige según su
+  velocidad** (la misma tabla para todos los coches y juegos). En nuestras pruebas la distancia aprendida quedó a menos de un 3 % de la real.
+- **Pestaña Muestras nueva** (junto a General): una tabla con tus coches para cada juego (distancia, medias, muestras, hecho), un clic en
+  el nombre del coche busca su distancia entre ejes y su reparto de peso, el lápiz deja escribir el valor o calcularlo con
+  distancia entre ejes × peso delantero, y hay botones de reiniciar, borrar, actualizar, abrir el fichero, exportar e importar. Ajustes del aprendizaje: de 10 a 50 muestras por coche.
+- **Marcas de aprendizaje en la vista en vivo y el overlay**: puntitos que se llenan con cada muestra y una barra de velocidad que dice cuándo
+  estás en el rango de velocidad bueno.
+- **Perfiles**: las tarjetas de **Bass shakers**, **pedales hápticos** y **Simucube ActivePedal** enseñan una tabla con todos los perfiles de SimHub
+  (prioridad alta, frecuencia, activo, reinicio). El perfil cargado va en verde y un clic en el nombre lo carga en SimHub (si SimHub cambia de perfil
+  solo, el plugin lo sigue). Lo que cambias en SimHub sale en la tabla y al revés. El interruptor de arriba de la tarjeta es el del
+  perfil cargado y la gráfica en vivo enseña ese perfil. Un **botón nuevo** copia el efecto en los perfiles que no lo tienen.
+- **El instalador pone el efecto en todos los perfiles**, no solo en el de por defecto (nunca crea un perfil), y guarda un
+  registro, `install.log`, con lo que hizo cada paso, para encontrar los problemas antes.
+- **Dispositivo nuevo: Simnet Haptic Pedals (beta)**, con las mismas opciones que los pedales Simagic. Los pedales hápticos bajan ahora hasta 20 Hz (antes 25).
+- **El derrape es más fiable en iRacing, Automobilista 2 y RaceRoom**: se mide en el eje trasero con la distancia aprendida, y cuando el
+  coche entero y el eje van hacia lados contrarios cuenta como sin derrape (arregló la vista en vivo dibujada al lado contrario a baja velocidad).
+- **Speed Start usa la velocidad del eje trasero en cualquier dirección** (todos los juegos): el efecto ya no se corta en mitad de un trompo con el coche de lado.
+- **Overlay**: con el plugin apagado, una versión caducada o sin juego en marcha, el overlay no enseña nada en vez de quedarse congelado con la última imagen.
+- **Diagnóstico**: los ficheros pasan a llamarse `diagnostics.txt` y `errors.log` (en inglés). El interruptor del diagnóstico sigue apagado por defecto.
 
 ### 0.5.3
 - **El sobreviraje con gas siempre vibra (LMU e iRacing)**: se quita el filtro de wheelspin. Silenciaba el efecto con más
