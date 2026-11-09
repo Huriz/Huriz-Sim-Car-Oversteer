@@ -1,12 +1,28 @@
 # Changelog
 
-**Latest version / Última versión: [v0.6.4](../../releases/latest)**
+**Latest version / Última versión: [v0.6.7](../../releases/latest)**
 
 [English](#english) | [Español](#español)
 
 ---
 
 ## English
+
+### 0.6.7
+- **Update with one click.** When there is a new version, press **Update** (in the notice or in the plugin tab): it downloads it from
+  GitHub, installs it by itself when you close SimHub (Windows asks for permission once) and opens SimHub again, with the same options you chose last time.
+  If something fails, `install-error.log` opens. Works from this version on.
+- **New device: Simsonn VAM / VAM Pro (beta).** Same as the Simagic and Simnet haptic pedals: its own card in the tab (on/off, 20-50 Hz,
+  high priority, live graph and SimHub profiles) and its own option in the installer, which detects it and adds the effect to all its profiles,
+  on the throttle pedal. Not tested with a real VAM yet: feedback welcome.
+- **Fixed: effect groups.** The installer now puts the effect in profiles that contain effect groups. In ShakeIt (and in the pedal devices) a profile can have a *group* of
+  effects (for example a "braking" group). The installer counted the effect lists wrongly when a profile had a group and, instead of installing,
+  stopped with "unexpected structure" without changing anything. Now it only looks at the list of each profile, puts the effect in all of them and leaves
+  your groups untouched (it still makes a backup first).
+- **If something goes wrong while setting up the effect, the installer says so and opens `install-error.log`** (full screen in Notepad, with what that install did) so you can
+  send it. Before, a failed step was silent.
+- **New tool: `Huriz-SimHub-Check.exe`** (in the release, next to the installer). One click, it installs nothing: it checks SimHub, tries the
+  installer steps on a **copy** of your SimHub settings and opens a report in Notepad to send if something does not work.
 
 ### 0.6.4 (includes the 0.6.x test versions, which were not released on their own)
 - **New games: rFactor 2, Automobilista 2 (beta) and RaceRoom (beta).** rFactor 2 works like Le Mans Ultimate. Automobilista 2
@@ -193,6 +209,22 @@
 ---
 
 ## Español
+
+### 0.6.7
+- **Actualizar con un clic.** Cuando haya una versión nueva, pulsa **Actualizar** (en el aviso o en la pestaña del plugin): se descarga de
+  GitHub, se instala sola al cerrar SimHub (Windows pide permiso una vez) y SimHub se vuelve a abrir, con las mismas opciones que elegiste la última vez.
+  Si algo falla, se abre `install-error.log`. Funciona a partir de esta versión.
+- **Dispositivo nuevo: Simsonn VAM / VAM Pro (beta).** Igual que los pedales hápticos Simagic y Simnet: su tarjeta en la pestaña
+  (interruptor, 20-50 Hz, prioridad alta, gráfica en vivo y perfiles de SimHub) y su opción en el instalador, que lo detecta y pone el efecto en todos
+  sus perfiles, en el pedal del acelerador. Aún sin probar con un VAM de verdad: se agradecen opiniones.
+- **Corregido: grupos de efectos.** El instalador ya pone el efecto en perfiles que tienen grupos de efectos. En ShakeIt (y en los dispositivos de pedales) un perfil puede llevar un
+  *grupo* de efectos (por ejemplo un grupo de «frenada»). El instalador contaba mal las listas de efectos cuando un perfil tenía un grupo y, en vez de
+  instalar, se paraba con «estructura inesperada» sin cambiar nada. Ahora mira solo la lista de cada perfil, pone el efecto en todos y no toca tus
+  grupos (sigue haciendo copia de seguridad antes).
+- **Si algo falla al poner el efecto, el instalador lo dice y abre `install-error.log`** (en grande en el Bloc de notas, con lo que hizo esa instalación) para que
+  lo envíes. Antes, un paso que fallaba no avisaba.
+- **Herramienta nueva: `Huriz-SimHub-Check.exe`** (en la release, junto al instalador). Un clic y no instala nada: revisa SimHub, prueba
+  los pasos del instalador sobre una **copia** de tus ajustes de SimHub y abre un informe en el Bloc de notas para enviarlo si algo no va.
 
 ### 0.6.4 (incluye las versiones de prueba 0.6.x, que no salieron por separado)
 - **Juegos nuevos: rFactor 2, Automobilista 2 (beta) y RaceRoom (beta).** rFactor 2 funciona como Le Mans Ultimate. Automobilista 2

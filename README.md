@@ -2,7 +2,7 @@
 
 *Formerly / antes: **Huriz - LMU Oversteer** and **LMU - Rear Slip Pro***
 
-**Latest version / Última versión: [v0.6.4](../../releases/latest)**
+**Latest version / Última versión: [v0.6.7](../../releases/latest)**
 
 [English](#english) | [Español](#español) · [Changelog](CHANGELOG.md)
 
@@ -12,9 +12,9 @@
 
 A **SimHub plugin for sim racing** (**Le Mans Ultimate**, **iRacing**, **rFactor 2** and, in beta, **Automobilista 2** and **RaceRoom**) that makes your **bass shakers**, your **haptic pedals** and your
 **Simucube ActivePedal** vibrate when the rear wheels lose grip (rear-end slides). It works with **ShakeIt Bass
-Shakers** and with the pedals set up in SimHub Devices (for example Simagic or Simnet haptic pedals or Simucube Active Pedals).
+Shakers** and with the pedals set up in SimHub Devices (for example Simagic or Simnet haptic pedals, Simsonn VAM or Simucube Active Pedals).
 
-> **Version 0.6.4**, with no time limit. Feedback and bug reports are welcome in the *Issues* tab.
+> **Version 0.6.7**, with no time limit. Feedback and bug reports are welcome in the *Issues* tab.
 
 [![Demo video: the plugin running in Le Mans Ultimate](media/lmu-0.5.3.webp)](https://www.youtube.com/watch?v=uv7yqTYdOnI)
 
@@ -68,7 +68,7 @@ telemetry refresh is too slow. Spinning the rear wheels under power is not muted
 - Detects slip on both rear wheels, with anticipation.
 - Limits the effect by throttle and boosts it with suspension bounce.
 - Settings tab with a **Simple** mode and a **Pro** mode, a **live view**, and **named setups per car**.
-- **Bass shakers**, **Simagic Haptic Pedals**, **Simnet Haptic Pedals** and **Simucube ActivePedal** drop-downs with an **on/off switch**, the
+- **Bass shakers**, **Simagic Haptic Pedals**, **Simnet Haptic Pedals**, **Simsonn VAM** and **Simucube ActivePedal** drop-downs with an **on/off switch**, the
   **frequency range** (one bar with two handles) and a **live graph** of the vibration. The switch and the frequencies
   are applied directly in SimHub.
 - **A table of your SimHub profiles** in each drop-down: every profile has its own on/off, priority and frequency,
@@ -80,11 +80,11 @@ telemetry refresh is too slow. Spinning the rear wheels under power is not muted
   outline and the slide line change colour with the slide (green, then yellow to red).
 - An **overlay for Dash Studio** (Overlays tab) that shows the live view over the game.
 - Creates the **Huriz - Sim Car Oversteer** effect for **bass shakers** in ShakeIt (50 Hz base, 60 Hz high, high priority).
-- Creates the same effect for **haptic pedals** (Simagic and Simnet), on the throttle pedal (45 Hz base, 50 Hz high).
+- Creates the same effect for **haptic pedals** (Simagic, Simnet and Simsonn VAM), on the throttle pedal (45 Hz base, 50 Hz high).
 - Creates the same effect for the **Simucube ActivePedal**, on the throttle pedal (50 Hz base, 75 Hz high).
 - The effect goes into **every profile** that your bass shakers and pedals have in SimHub, not only the default one.
 - English and Spanish interface.
-- **New version notice:** when a newer version is out it shows a banner in its tab and, 30 seconds after SimHub starts, a small window with **Download**, **Later** and **Skip this one** (never while a game is running). It checks GitHub at most once a day and sends no data; without internet it does nothing.
+- **New version notice:** when a newer version is out it shows a banner in its tab and, 30 seconds after SimHub starts, a small window with **Update**, **Later** and **Skip this one** (never while a game is running). **Update** downloads it and installs it by itself when you close SimHub (Windows asks for permission once), then opens SimHub again with the same options as last time; if something fails, `install-error.log` opens. It checks GitHub at most once a day and sends no data; without internet it does nothing.
 
 ### Requirements
 
@@ -102,21 +102,25 @@ telemetry refresh is too slow. Spinning the rear wheels under power is not muted
    red); detected ones come ticked, and you can tick the others anyway:
    - **Plugin** – always installed.
    - **Bass shakers** – the effect in ShakeIt Bass Shakers. Ticked.
-   - **Pedals (SimHub Devices)** – three options in the same group:
+   - **Pedals (SimHub Devices)** – four options in the same group:
      - **Simagic Haptic Pedals** – **tested only with Simagic haptic pedals**; other brands have not been tested.
      - **Simnet Haptic Pedals (beta)** – testing in progress.
+     - **Simsonn VAM (beta)** – Simsonn VAM / VAM Pro, testing in progress.
      - **Simucube ActivePedal (beta)** – testing in progress. The pedal needs some pressure to feel the vibration.
    - **Dash Studio overlay** – ticked.
 
    The effect is created in **every profile** that already exists in ShakeIt and in each pedal device (the installer
    never creates a profile), on the throttle pedal only; you can change it later in SimHub (Devices > your pedals >
    Effects). If SimHub doesn't have the device yet, add it in Devices and run the installer again. The installer
-   writes what it did in `%LOCALAPPDATA%\HurizOversteer\install.log`.
+   writes what it did in `%LOCALAPPDATA%\HurizOversteer\install.log`; if a step fails, it tells you and opens `install-error.log` (same folder) in Notepad so you can send it.
 5. Open SimHub and enable the **Huriz - Sim Car Oversteer** plugin when it asks.
 6. You will find the **Huriz - Sim Car Oversteer** effect:
    - **Bass shakers:** in ShakeIt, as a single **Mono** signal. One body shaker is enough. With several shakers, choose
      which ones play it in the channel map of your sound output in ShakeIt.
    - **Haptic pedals** and **Simucube ActivePedal:** in SimHub > Devices > your pedals > Effects (in each profile).
+
+**Updating:** from 0.6.7 on, press **Update** when the plugin tells you about a new version (see below). With an older version, download
+the new installer and run it with SimHub closed; your settings and setups are kept.
 
 **Updating from Huriz - LMU Oversteer or LMU - Rear Slip Pro:** just run the new installer. It removes the old plugin and keeps your
 settings, setups, effects, SimHub menu position and overlay layouts.
@@ -207,8 +211,9 @@ Open it from the **Guide** button in the plugin tab.
 - **Game** (blue, next to the loaded profile) – the game SimHub is running right now. It changes on its own when you
   switch games and hides when no game is running.
 - **Check for updates** (next to the version) – checks GitHub right away for a newer version and tells you the result.
-- **New version strip** (blue, under the title) – appears only when a newer version is out. **Download** opens the
-  release page; **Don't remind me about this version** hides it until the next one.
+- **New version strip** (blue, under the title) – appears only when a newer version is out. **Update** downloads it;
+  when it is ready, **Close SimHub now** (or close it yourself) installs it and SimHub opens again. If the update fails, **Download**
+  opens the release page. **Don't remind me about this version** hides it until the next one.
 - **Support strip** (purple, under the title) – a short note that the plugin is free, with a button that opens the PayPal
   link. Close it with the **X**; it comes back after each installation. It is never shown in the game.
 - **Simple / Pro** – Simple shows only Slip Start and Slip Max. Pro adds the rest. Switching between them
@@ -264,11 +269,11 @@ Open it from the **Guide** button in the plugin tab.
 Under **Slip Start**, **Slip Max** and the frequency bars there are **colour zones**: green recommended, yellow with
 care, red not recommended. A small tick marks the default value.
 
-**Drop-downs: Dash Studio overlay, Bass shakers, Simagic Haptic Pedals, Simnet Haptic Pedals and Simucube ActivePedal**
+**Drop-downs: Dash Studio overlay, Bass shakers, Simagic Haptic Pedals, Simnet Haptic Pedals, Simsonn VAM and Simucube ActivePedal**
 
 Click the title to open or close each one. Closed, it shows a summary on the right (for example "50–60 Hz"),
 and the plugin remembers which ones you left open. **Bass shakers**, **Simagic Haptic Pedals**, **Simnet Haptic
-Pedals** and **Simucube ActivePedal** only appear when their effect is in SimHub, so you only see what you have.
+Pedals**, **Simsonn VAM** and **Simucube ActivePedal** only appear when their effect is in SimHub, so you only see what you have.
 Each one also has its table of [profiles](#profiles).
 
 - **On/off switch** (right of the title) – turns that output on or off. For bass shakers and pedals it
@@ -319,6 +324,9 @@ Save one set of settings for each car and load it with one click.
 
 ### Troubleshooting
 
+- **Something does not work and you don't know why.** Download **Huriz-SimHub-Check.exe** from the [latest release](../../releases/latest)
+  and run it (one click, it installs and changes nothing). It checks SimHub, tries the installer steps on a **copy** of your settings
+  and opens a report in Notepad (also saved on your Desktop as `Huriz-SimHub-Report.txt`): send it in the *Issues* tab.
 - **The effect is not in ShakeIt.** Open ShakeIt once, make sure it has at least one profile, then run the installer again
   with SimHub closed. The installer never creates a second copy if it already exists, and never creates a profile.
   If it still does not appear, open `%LOCALAPPDATA%\HurizOversteer\install.log`: it says what each step did and why it skipped one.
@@ -359,7 +367,8 @@ Properties published by the plugin (search "HurizOversteer" in SimHub):
 | `Haptic.RL`, `Haptic.RR` | Same output for haptic pedals: 0 when their switch is off |
 | `ActivePedal.RL`, `ActivePedal.RR` | Same output for the Simucube ActivePedal: 0 when its switch is off |
 | `Simnet.RL`, `Simnet.RR` | Same output for the Simnet Haptic Pedals: 0 when their switch is off |
-| `Shaker.Frequency`, `Haptic.Frequency`, `ActivePedal.Frequency`, `Simnet.Frequency` | Frequency (Hz) that matches the current vibration, from the minimum to the maximum |
+| `Simsonn.RL`, `Simsonn.RR` | Same output for the Simsonn VAM: 0 when their switch is off |
+| `Shaker.Frequency`, `Haptic.Frequency`, `ActivePedal.Frequency`, `Simnet.Frequency`, `Simsonn.Frequency` | Frequency (Hz) that matches the current vibration, from the minimum to the maximum |
 | `Expiry.DaysLeft` | Days left until this version expires, or -1 if the build has no limit |
 | `Debug.Rate` | New telemetry readings per second |
 | `Debug.SlipRL/RR` | Slip angle per rear wheel (degrees) |
@@ -397,11 +406,11 @@ Redistribution and modification are not allowed.
 ## Español
 
 Plugin de SimHub para **simracing** (**Le Mans Ultimate**, **iRacing**, **rFactor 2** y, en beta, **Automobilista 2** y **RaceRoom**) que hace vibrar tus **bass shakers**, tus **pedales hápticos** y tus
-**Simucube ActivePedal** cuando las ruedas traseras pierden agarre (derrape de la zaga). Funciona con **ShakeIt Bass
-Shakers** y con los pedales configurados en Dispositivos de SimHub (por ejemplo pedales hápticos Simagic o Simnet o Simucube
+**Simucube ActivePedal** cuando las ruedas traseras pierden agarre (sobreviraje, se va el culo). Funciona con **ShakeIt Bass
+Shakers** y con los pedales configurados en Dispositivos de SimHub (por ejemplo pedales hápticos Simagic o Simnet, Simsonn VAM o Simucube
 Active Pedals).
 
-> **Versión 0.6.4**, sin límite de tiempo. Los comentarios y fallos son bienvenidos en la pestaña *Issues*.
+> **Versión 0.6.7**, sin límite de tiempo. Los comentarios y fallos son bienvenidos en la pestaña *Issues*.
 
 [![Vídeo de demostración: el plugin funcionando en Le Mans Ultimate](media/lmu-0.5.3.webp)](https://www.youtube.com/watch?v=uv7yqTYdOnI)
 
@@ -409,7 +418,7 @@ Active Pedals).
 
 ### En resumen
 
-- **Qué es:** un plugin de SimHub que hace vibrar tus bass shakers, tus pedales hápticos o tus Simucube ActivePedal cuando la zaga del coche empieza a irse en Le Mans Ultimate, iRacing, rFactor 2, Automobilista 2 (beta) o RaceRoom (beta).
+- **Qué es:** un plugin de SimHub que hace vibrar tus bass shakers, tus pedales hápticos o tus Simucube ActivePedal cuando el culo del coche empieza a irse en Le Mans Ultimate, iRacing, rFactor 2, Automobilista 2 (beta) o RaceRoom (beta).
 - **Instalar:** descarga el instalador, cierra SimHub, ejecútalo y elige qué instalar. Crea el efecto para bass shakers (ShakeIt), pedales hápticos y Simucube ActivePedal, según lo que uses, en **todos** tus perfiles de SimHub.
 - **Aprende tu coche:** en iRacing, Automobilista 2 y RaceRoom aprende solo, mientras conduces despacio, la distancia del centro de gravedad al eje trasero (o puedes escribirla). Mira [Distancia al eje trasero](#distancia-al-eje-trasero-iracing-raceroom-y-automobilista-2).
 - **Un control por perfil de SimHub:** cada perfil tiene su propio on/off, prioridad y frecuencia en una tabla dentro del plugin (mira [Perfiles](#perfiles)).
@@ -455,7 +464,7 @@ el refresco de la telemetría es demasiado lento. El patinazo de las traseras al
 - Detecta el deslizamiento de las dos ruedas traseras, con anticipación.
 - Limita la vibración según el gas y la refuerza con el bote de la suspensión.
 - Pestaña de ajustes con modo **Simple** y modo **Pro**, una **vista en vivo** y **setups con nombre por coche**.
-- Desplegables de **bass shakers**, **Simagic Haptic Pedals**, **Simnet Haptic Pedals** y **Simucube ActivePedal** con **interruptor on/off**, el
+- Desplegables de **bass shakers**, **Simagic Haptic Pedals**, **Simnet Haptic Pedals**, **Simsonn VAM** y **Simucube ActivePedal** con **interruptor on/off**, el
   **rango de frecuencia** (una barra con dos tiradores) y una **gráfica en vivo** de la vibración. El interruptor y las
   frecuencias se aplican directamente en SimHub.
 - **Una tabla con tus perfiles de SimHub** en cada desplegable: cada perfil tiene su propio on/off, prioridad y frecuencia,
@@ -467,11 +476,11 @@ el refresco de la telemetría es demasiado lento. El patinazo de las traseras al
   el contorno y la línea del derrape cambian de color con el derrape (verde, y de amarillo a rojo).
 - Un **overlay para Dash Studio** (pestaña Overlays) que muestra la vista en vivo sobre el juego.
 - Crea solo el efecto **Huriz - Sim Car Oversteer** para **bass shakers** en ShakeIt (50 Hz base, 60 Hz alta, prioridad alta).
-- Crea el mismo efecto para **pedales hápticos** (Simagic y Simnet), en el acelerador (45 Hz base, 50 Hz alta).
+- Crea el mismo efecto para **pedales hápticos** (Simagic, Simnet y Simsonn VAM), en el acelerador (45 Hz base, 50 Hz alta).
 - Crea el mismo efecto para los **Simucube ActivePedal**, en el acelerador (50 Hz base, 75 Hz alta).
 - El efecto va en **todos los perfiles** que tengan tus bass shakers y tus pedales en SimHub, no solo en el de por defecto.
 - Interfaz en español e inglés.
-- **Aviso de versión nueva:** cuando sale una versión más nueva muestra un aviso en su pestaña y, 30 segundos después de arrancar SimHub, una ventana pequeña con **Descargar**, **Más tarde** y **No avisar de esta** (nunca con un juego en marcha). Mira en GitHub como mucho una vez al día y no envía ningún dato; sin internet no hace nada.
+- **Aviso de versión nueva:** cuando sale una versión más nueva muestra un aviso en su pestaña y, 30 segundos después de arrancar SimHub, una ventana pequeña con **Actualizar**, **Más tarde** y **No avisar de esta** (nunca con un juego en marcha). **Actualizar** la descarga y la instala sola al cerrar SimHub (Windows pide permiso una vez) y vuelve a abrir SimHub con las mismas opciones de la última vez; si algo falla, se abre `install-error.log`. Mira en GitHub como mucho una vez al día y no envía ningún dato; sin internet no hace nada.
 
 ### Requisitos
 
@@ -489,21 +498,25 @@ el refresco de la telemetría es demasiado lento. El patinazo de las traseras al
    rojo); los detectados salen marcados y los demás se pueden marcar igualmente:
    - **Plugin** – siempre se instala.
    - **Bass shakers** – el efecto en ShakeIt Bass Shakers. Marcado.
-   - **Pedales (Dispositivos de SimHub)** – tres opciones en el mismo grupo:
+   - **Pedales (Dispositivos de SimHub)** – cuatro opciones en el mismo grupo:
      - **Simagic Haptic Pedals** – **solo probado con pedales hápticos Simagic**; otras marcas no se han probado.
      - **Simnet Haptic Pedals (beta)** – en pruebas.
+     - **Simsonn VAM (beta)** – Simsonn VAM / VAM Pro, en pruebas.
      - **Simucube ActivePedal (beta)** – en pruebas. El pedal necesita algo de presión para notar la vibración.
    - **Overlay de Dash Studio** – marcado.
 
    El efecto se crea en **todos los perfiles** que ya existen en ShakeIt y en cada dispositivo de pedales (el instalador
    nunca crea un perfil), solo en el pedal del acelerador; puedes cambiarlo después en SimHub (Dispositivos > tus pedales >
    Efectos). Si SimHub aún no tiene el dispositivo, añádelo en Dispositivos y vuelve a ejecutar el instalador. El instalador
-   apunta lo que hizo en `%LOCALAPPDATA%\HurizOversteer\install.log`.
+   apunta lo que hizo en `%LOCALAPPDATA%\HurizOversteer\install.log`; si algún paso falla, lo avisa y abre `install-error.log` (misma carpeta) en el Bloc de notas para que lo envíes.
 5. Abre SimHub y activa el plugin **Huriz - Sim Car Oversteer** cuando lo pida.
 6. Encontrarás el efecto **Huriz - Sim Car Oversteer**:
    - **Bass shakers:** en ShakeIt, como una sola señal **Mono**. Basta con un body shaker. Con varios shakers, elige
      en cuáles suena en el mapa de canales de tu salida de sonido en ShakeIt.
    - **Pedales hápticos** y **Simucube ActivePedal:** en SimHub > Dispositivos > tus pedales > Efectos (en cada perfil).
+
+**Actualizar:** desde la 0.6.7, pulsa **Actualizar** cuando el plugin te avise de una versión nueva (ver más abajo). Con una versión anterior,
+descarga el instalador nuevo y ejecútalo con SimHub cerrado; tus ajustes y setups se conservan.
 
 **Si vienes de Huriz - LMU Oversteer o de LMU - Rear Slip Pro:** basta con ejecutar el instalador nuevo. Quita el plugin viejo y conserva tus
 ajustes, setups, efectos, posición en el menú de SimHub y diseños de overlays.
@@ -594,8 +607,9 @@ Los desplegables de **Bass shakers**, **pedales hápticos** y **Simucube ActiveP
 - **Juego** (azul, al lado del perfil cargado) – el juego que SimHub tiene en marcha. Cambia solo al cambiar de juego y
   se oculta cuando no hay ninguno.
 - **Buscar actualizaciones** (junto a la versión) – mira en GitHub al momento si hay una versión más nueva y te dice el resultado.
-- **Franja de versión nueva** (azul, bajo el título) – solo aparece cuando hay una versión más nueva. **Descargar** abre
-  la página de la release; **No avisar de esta versión** la oculta hasta la siguiente.
+- **Franja de versión nueva** (azul, bajo el título) – solo aparece cuando hay una versión más nueva. **Actualizar** la descarga;
+  cuando está lista, **Cerrar SimHub ahora** (o ciérralo tú) la instala y SimHub se vuelve a abrir. Si la actualización falla,
+  **Descargar** abre la página de la release. **No avisar de esta versión** la oculta hasta la siguiente.
 - **Franja de apoyo** (violeta, bajo el título) – una nota corta de que el plugin es gratis, con un botón que abre el enlace de
   PayPal. Se cierra con la **X** y vuelve a salir tras cada instalación. Nunca se muestra dentro del juego.
 - **Simple / Pro** – Simple muestra solo Slip Start y Slip Max. Pro añade el resto. Cambiar de uno a otro
@@ -653,10 +667,10 @@ Los desplegables de **Bass shakers**, **pedales hápticos** y **Simucube ActiveP
 Bajo **Slip Start**, **Slip Max** y las barras de frecuencia hay **zonas de color**: verde recomendado, amarillo con
 cuidado, rojo no recomendable. Una rayita marca el valor por defecto.
 
-**Desplegables: Overlay de Dash Studio, Bass shakers, Simagic Haptic Pedals, Simnet Haptic Pedals y Simucube ActivePedal**
+**Desplegables: Overlay de Dash Studio, Bass shakers, Simagic Haptic Pedals, Simnet Haptic Pedals, Simsonn VAM y Simucube ActivePedal**
 
 Haz clic en el título para abrir o cerrar cada uno. Cerrado muestra un resumen a la derecha (por ejemplo "50–60 Hz"),
-y el plugin recuerda cuáles dejaste abiertos. **Bass shakers**, **Simagic Haptic Pedals**, **Simnet Haptic Pedals** y
+y el plugin recuerda cuáles dejaste abiertos. **Bass shakers**, **Simagic Haptic Pedals**, **Simnet Haptic Pedals**, **Simsonn VAM** y
 **Simucube ActivePedal** solo aparecen si su efecto está en SimHub, así ves solo lo que tienes. Cada uno lleva también su
 tabla de [perfiles](#perfiles).
 
@@ -708,6 +722,9 @@ Guarda un ajuste para cada coche y cárgalo con un clic.
 
 ### Problemas frecuentes
 
+- **Algo no va y no sabes por qué.** Descarga **Huriz-SimHub-Check.exe** de la [última release](../../releases/latest) y
+  ejecútalo (un clic, no instala ni cambia nada). Revisa SimHub, prueba los pasos del instalador sobre una **copia** de tus ajustes
+  y abre un informe en el Bloc de notas (también queda en el Escritorio como `Huriz-SimHub-Report.txt`): envíalo en la pestaña *Issues*.
 - **El efecto no está en ShakeIt.** Abre ShakeIt una vez, comprueba que tiene al menos un perfil y vuelve a ejecutar el
   instalador con SimHub cerrado. El instalador nunca crea una segunda copia si ya existe y nunca crea un perfil.
   Si sigue sin salir, abre `%LOCALAPPDATA%\HurizOversteer\install.log`: dice qué hizo cada paso y por qué se saltó alguno.
@@ -748,7 +765,8 @@ Propiedades que publica el plugin (busca "HurizOversteer" en SimHub):
 | `Haptic.RL`, `Haptic.RR` | La misma salida para pedales hápticos: 0 con su interruptor apagado |
 | `ActivePedal.RL`, `ActivePedal.RR` | La misma salida para Simucube ActivePedal: 0 con su interruptor apagado |
 | `Simnet.RL`, `Simnet.RR` | La misma salida para Simnet Haptic Pedals: 0 con su interruptor apagado |
-| `Shaker.Frequency`, `Haptic.Frequency`, `ActivePedal.Frequency`, `Simnet.Frequency` | Frecuencia (Hz) que corresponde a la vibración de ahora, del mínimo al máximo |
+| `Simsonn.RL`, `Simsonn.RR` | La misma salida para Simsonn VAM: 0 con su interruptor apagado |
+| `Shaker.Frequency`, `Haptic.Frequency`, `ActivePedal.Frequency`, `Simnet.Frequency`, `Simsonn.Frequency` | Frecuencia (Hz) que corresponde a la vibración de ahora, del mínimo al máximo |
 | `Expiry.DaysLeft` | Días que quedan hasta que caduque esta versión, o -1 si la versión no tiene límite |
 | `Debug.Rate` | Lecturas nuevas de telemetría por segundo |
 | `Debug.SlipRL/RR` | Ángulo de slip de cada rueda trasera (grados) |
