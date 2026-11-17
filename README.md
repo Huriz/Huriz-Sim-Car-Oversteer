@@ -10,7 +10,7 @@
 
 ## English
 
-A **SimHub plugin for sim racing** (**Le Mans Ultimate**, **iRacing**, **rFactor 2**, **Assetto Corsa**, **Assetto Corsa EVO**, **Assetto Corsa Rally**, **Assetto Corsa Competizione** and, in beta, **Automobilista 2** and **RaceRoom**) that makes your **bass shakers**, your **haptic pedals** and your
+A **SimHub plugin for sim racing** (**Le Mans Ultimate**, **iRacing**, **rFactor 2**, **Assetto Corsa**, **Assetto Corsa EVO**, **Assetto Corsa Rally**, **Assetto Corsa Competizione**, **Automobilista 2** and **RaceRoom**) that makes your **bass shakers**, your **haptic pedals** and your
 **Simucube ActivePedal** vibrate when the rear wheels lose grip (rear-end slides). It works with **ShakeIt Bass
 Shakers** and with the pedals set up in SimHub Devices (for example Simagic or Simnet haptic pedals, Simsonn VAM or Simucube Active Pedals).
 
@@ -22,7 +22,7 @@ Shakers** and with the pedals set up in SimHub Devices (for example Simagic or S
 
 ### In short
 
-- **What it is:** a SimHub plugin that makes your bass shakers, haptic pedals or Simucube ActivePedal vibrate when the rear of the car starts to slide in Le Mans Ultimate, iRacing, rFactor 2, Automobilista 2 (beta), RaceRoom (beta), Assetto Corsa, Assetto Corsa EVO, Assetto Corsa Rally or Assetto Corsa Competizione.
+- **What it is:** a SimHub plugin that makes your bass shakers, haptic pedals or Simucube ActivePedal vibrate when the rear of the car starts to slide in Le Mans Ultimate, iRacing, rFactor 2, Automobilista 2, RaceRoom, Assetto Corsa, Assetto Corsa EVO, Assetto Corsa Rally or Assetto Corsa Competizione.
 - **Install:** download the installer, close SimHub, run it and choose what to install. It creates the effect for bass shakers (ShakeIt), haptic pedals and Simucube ActivePedal, whichever you use, in **all** your SimHub profiles.
 - **It learns your car:** in iRacing, Automobilista 2 and RaceRoom it learns by itself, while you drive slowly, the distance from the centre of gravity to the rear axle (or you can type it). See [Rear-axle distance](#rear-axle-distance-iracing-raceroom-and-automobilista-2).
 - **One control per SimHub profile:** each profile has its own on/off, priority and frequency in a table inside the plugin (see [Profiles](#profiles)).
@@ -58,8 +58,8 @@ telemetry refresh is too slow. Spinning the rear wheels under power is not muted
 - **iRacing** – detected automatically. iRacing does not give the slip of each tyre, so the rear slip is calculated from
   the car speed and its yaw rate, using the distance from the centre of gravity to the rear axle, which the plugin learns for each
   car (see [Rear-axle distance](#rear-axle-distance-iracing-raceroom-and-automobilista-2)).
-- **Automobilista 2 (beta)** – same method as iRacing. In the game, turn on the shared memory option. Still in testing.
-- **RaceRoom (beta)** – same method as iRacing. Still in testing.
+- **Automobilista 2** – same method as iRacing. In the game, turn on the shared memory option.
+- **RaceRoom** – same method as iRacing.
 - **Assetto Corsa EVO**, **Assetto Corsa Rally** and **Assetto Corsa Competizione** – the game gives the slip angle of each tyre, so the plugin reads each rear tyre directly: nothing to learn,
   no samples.
 - **Assetto Corsa** – the original game does not give the slip angle, but it does tell where each tyre is and where it points. The plugin gets the slip of each rear tyre
@@ -95,7 +95,7 @@ telemetry refresh is too slow. Spinning the rear wheels under power is not muted
 - Windows 10 or 11.
 - SimHub with your **bass shakers** (ShakeIt: sound card and shakers) and/or your **pedals** (haptic pedals or
   Simucube Active Pedals, in Devices) already set up.
-- Le Mans Ultimate, iRacing, rFactor 2, Automobilista 2 (beta), RaceRoom (beta), Assetto Corsa, Assetto Corsa EVO, Assetto Corsa Rally or Assetto Corsa Competizione.
+- Le Mans Ultimate, iRacing, rFactor 2, Automobilista 2, RaceRoom, Assetto Corsa, Assetto Corsa EVO, Assetto Corsa Rally or Assetto Corsa Competizione.
 
 ### Installation
 
@@ -108,9 +108,9 @@ telemetry refresh is too slow. Spinning the rear wheels under power is not muted
    - **Bass shakers** – the effect in ShakeIt Bass Shakers. Ticked.
    - **Pedals (SimHub Devices)** – four options in the same group:
      - **Simagic Haptic Pedals** – **tested only with Simagic haptic pedals**; other brands have not been tested.
-     - **Simnet Haptic Pedals (beta)** – testing in progress.
-     - **Simsonn VAM (beta)** – Simsonn VAM / VAM Pro, testing in progress.
-     - **Simucube ActivePedal (beta)** – testing in progress. The pedal needs some pressure to feel the vibration.
+     - **Simnet Haptic Pedals**.
+     - **Simsonn VAM** – Simsonn VAM / VAM Pro.
+     - **Simucube ActivePedal** – The pedal needs some pressure to feel the vibration.
    - **Dash Studio overlay** – ticked.
 
    The effect is created in **every profile** that already exists in ShakeIt and in each pedal device (the installer
@@ -412,7 +412,7 @@ Redistribution and modification are not allowed.
 
 ## Español
 
-Plugin de SimHub para **simracing** (**Le Mans Ultimate**, **iRacing**, **rFactor 2**, **Assetto Corsa**, **Assetto Corsa EVO**, **Assetto Corsa Rally**, **Assetto Corsa Competizione** y, en beta, **Automobilista 2** y **RaceRoom**) que hace vibrar tus **bass shakers**, tus **pedales hápticos** y tus
+Plugin de SimHub para **simracing** (**Le Mans Ultimate**, **iRacing**, **rFactor 2**, **Assetto Corsa**, **Assetto Corsa EVO**, **Assetto Corsa Rally**, **Assetto Corsa Competizione**, **Automobilista 2** y **RaceRoom**) que hace vibrar tus **bass shakers**, tus **pedales hápticos** y tus
 **Simucube ActivePedal** cuando las ruedas traseras pierden agarre (sobreviraje, se va el culo). Funciona con **ShakeIt Bass
 Shakers** y con los pedales configurados en Dispositivos de SimHub (por ejemplo pedales hápticos Simagic o Simnet, Simsonn VAM o Simucube
 Active Pedals).
@@ -425,7 +425,7 @@ Active Pedals).
 
 ### En resumen
 
-- **Qué es:** un plugin de SimHub que hace vibrar tus bass shakers, tus pedales hápticos o tus Simucube ActivePedal cuando el culo del coche empieza a irse en Le Mans Ultimate, iRacing, rFactor 2, Automobilista 2 (beta), RaceRoom (beta), Assetto Corsa, Assetto Corsa EVO, Assetto Corsa Rally o Assetto Corsa Competizione.
+- **Qué es:** un plugin de SimHub que hace vibrar tus bass shakers, tus pedales hápticos o tus Simucube ActivePedal cuando el culo del coche empieza a irse en Le Mans Ultimate, iRacing, rFactor 2, Automobilista 2, RaceRoom, Assetto Corsa, Assetto Corsa EVO, Assetto Corsa Rally o Assetto Corsa Competizione.
 - **Instalar:** descarga el instalador, cierra SimHub, ejecútalo y elige qué instalar. Crea el efecto para bass shakers (ShakeIt), pedales hápticos y Simucube ActivePedal, según lo que uses, en **todos** tus perfiles de SimHub.
 - **Aprende tu coche:** en iRacing, Automobilista 2 y RaceRoom aprende solo, mientras conduces despacio, la distancia del centro de gravedad al eje trasero (o puedes escribirla). Mira [Distancia al eje trasero](#distancia-al-eje-trasero-iracing-raceroom-y-automobilista-2).
 - **Un control por perfil de SimHub:** cada perfil tiene su propio on/off, prioridad y frecuencia en una tabla dentro del plugin (mira [Perfiles](#perfiles)).
@@ -461,8 +461,8 @@ el refresco de la telemetría es demasiado lento. El patinazo de las traseras al
 - **iRacing** – se detecta solo. iRacing no da el slip de cada neumático, así que el slip trasero se calcula con la
   velocidad del coche y su giro (yaw), usando la distancia del centro de gravedad al eje trasero, que el plugin aprende para
   cada coche (mira [Distancia al eje trasero](#distancia-al-eje-trasero-iracing-raceroom-y-automobilista-2)).
-- **Automobilista 2 (beta)** – el mismo método que iRacing. En el juego hay que activar la opción de memoria compartida. En pruebas.
-- **RaceRoom (beta)** – el mismo método que iRacing. En pruebas.
+- **Automobilista 2** – el mismo método que iRacing. En el juego hay que activar la opción de memoria compartida.
+- **RaceRoom** – el mismo método que iRacing.
 - **Assetto Corsa EVO**, **Assetto Corsa Rally** y **Assetto Corsa Competizione** – el juego da el ángulo de deslizamiento de cada neumático, así que el plugin lee cada neumático trasero directamente: nada que aprender,
   sin muestras.
 - **Assetto Corsa** – el juego original no da el ángulo, pero sí dónde está cada neumático y hacia dónde apunta. El plugin saca el deslizamiento de cada neumático trasero
@@ -498,7 +498,7 @@ el refresco de la telemetría es demasiado lento. El patinazo de las traseras al
 - Windows 10 u 11.
 - SimHub con tus **bass shakers** (ShakeIt: tarjeta de sonido y shakers) y/o tus **pedales** (hápticos o Simucube
   Active Pedals, en Dispositivos) configurados.
-- Le Mans Ultimate, iRacing, rFactor 2, Automobilista 2 (beta), RaceRoom (beta), Assetto Corsa, Assetto Corsa EVO, Assetto Corsa Rally o Assetto Corsa Competizione.
+- Le Mans Ultimate, iRacing, rFactor 2, Automobilista 2, RaceRoom, Assetto Corsa, Assetto Corsa EVO, Assetto Corsa Rally o Assetto Corsa Competizione.
 
 ### Instalación
 
@@ -511,9 +511,9 @@ el refresco de la telemetría es demasiado lento. El patinazo de las traseras al
    - **Bass shakers** – el efecto en ShakeIt Bass Shakers. Marcado.
    - **Pedales (Dispositivos de SimHub)** – cuatro opciones en el mismo grupo:
      - **Simagic Haptic Pedals** – **solo probado con pedales hápticos Simagic**; otras marcas no se han probado.
-     - **Simnet Haptic Pedals (beta)** – en pruebas.
-     - **Simsonn VAM (beta)** – Simsonn VAM / VAM Pro, en pruebas.
-     - **Simucube ActivePedal (beta)** – en pruebas. El pedal necesita algo de presión para notar la vibración.
+     - **Simnet Haptic Pedals**.
+     - **Simsonn VAM** – Simsonn VAM / VAM Pro.
+     - **Simucube ActivePedal** – El pedal necesita algo de presión para notar la vibración.
    - **Overlay de Dash Studio** – marcado.
 
    El efecto se crea en **todos los perfiles** que ya existen en ShakeIt y en cada dispositivo de pedales (el instalador
