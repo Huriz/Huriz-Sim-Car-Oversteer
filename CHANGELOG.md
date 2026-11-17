@@ -1,12 +1,22 @@
 # Changelog
 
-**Latest version / Última versión: [v0.6.7](../../releases/latest)**
+**Latest version / Última versión: [v0.7.0](../../releases/latest)**
 
 [English](#english) | [Español](#español)
 
 ---
 
 ## English
+
+### 0.7.0
+- **New games: Assetto Corsa Competizione, plus Assetto Corsa EVO, Assetto Corsa Rally and Assetto Corsa (the original) in beta.** The four read each rear tyre directly, so there is nothing to learn
+  and they do not appear in the Samples tab. EVO, Rally and Competizione read the slip angle that the game gives for each tyre. The original Assetto Corsa does not give it, so the plugin
+  works it out from how each tyre moves. In the header they show as "(beta)". Still in testing: feedback welcome.
+- **Suggested Slip Start:** about **4.5°** for Assetto Corsa and **3.3–3.5°** for Assetto Corsa EVO and **3.5–3.7°** for Assetto Corsa Competizione (see *Tuning tips*). It is a matter of taste; save one setup per game.
+- **Slide side in the live view and the overlay:** each game can now flip the side the coloured car leans to. Assetto Corsa and Assetto Corsa EVO use it, so the drawing leans
+  to the same side as in Le Mans Ultimate. It only changes the drawing, not the vibration.
+- **Diagnostics:** the file now also notes the front wheels, the steering and the suspension of each wheel in the new games (it helps to add more games).
+- **`Huriz-SimHub-Check.exe`** is included in this release too (same tool as in 0.6.7, updated to 0.7.0).
 
 ### 0.6.7
 - **Update with one click.** When there is a new version, press **Update** (in the notice or in the plugin tab): it downloads it from
@@ -209,6 +219,16 @@
 ---
 
 ## Español
+
+### 0.7.0
+- **Juegos nuevos: Assetto Corsa Competizione, y en beta Assetto Corsa EVO, Assetto Corsa Rally y Assetto Corsa (el original).** Los cuatro leen cada neumático trasero directamente, así que no hay nada que aprender
+  y no salen en la pestaña Muestras. EVO, Rally y Competizione leen el ángulo de deslizamiento que da el juego de cada neumático. El Assetto Corsa original no lo da, así que el plugin
+  lo saca de cómo se mueve cada neumático. En la cabecera salen como «(beta)». En pruebas: se agradecen opiniones.
+- **Slip Start sugerido:** unos **4,5°** para Assetto Corsa y **3,3–3,5°** para Assetto Corsa EVO y **3,5–3,7°** para Assetto Corsa Competizione (mira *Consejos de ajuste*). Es cuestión de gusto; guarda un setup por juego.
+- **Lado del derrape en la vista en vivo y en el overlay:** cada juego puede ahora dar la vuelta al lado hacia el que se inclina el coche de color. Assetto Corsa y Assetto Corsa EVO
+  lo usan, así que el dibujo se inclina hacia el mismo lado que en Le Mans Ultimate. Solo cambia el dibujo, no la vibración.
+- **Diagnóstico:** el archivo apunta ahora también las ruedas delanteras, el volante y la suspensión de cada rueda en los juegos nuevos (ayuda a añadir más juegos).
+- **`Huriz-SimHub-Check.exe`** va también en esta release (la misma herramienta de la 0.6.7, actualizada a la 0.7.0).
 
 ### 0.6.7
 - **Actualizar con un clic.** Cuando haya una versión nueva, pulsa **Actualizar** (en el aviso o en la pestaña del plugin): se descarga de

@@ -2,7 +2,7 @@
 
 *Formerly / antes: **Huriz - LMU Oversteer** and **LMU - Rear Slip Pro***
 
-**Latest version / Última versión: [v0.6.7](../../releases/latest)**
+**Latest version / Última versión: [v0.7.0](../../releases/latest)**
 
 [English](#english) | [Español](#español) · [Changelog](CHANGELOG.md)
 
@@ -10,11 +10,11 @@
 
 ## English
 
-A **SimHub plugin for sim racing** (**Le Mans Ultimate**, **iRacing**, **rFactor 2** and, in beta, **Automobilista 2** and **RaceRoom**) that makes your **bass shakers**, your **haptic pedals** and your
+A **SimHub plugin for sim racing** (**Le Mans Ultimate**, **iRacing**, **rFactor 2** and, in beta, **Automobilista 2**, **RaceRoom**, **Assetto Corsa**, **Assetto Corsa EVO**, **Assetto Corsa Rally**) and, fully supported, **Assetto Corsa Competizione**, that makes your **bass shakers**, your **haptic pedals** and your
 **Simucube ActivePedal** vibrate when the rear wheels lose grip (rear-end slides). It works with **ShakeIt Bass
 Shakers** and with the pedals set up in SimHub Devices (for example Simagic or Simnet haptic pedals, Simsonn VAM or Simucube Active Pedals).
 
-> **Version 0.6.7**, with no time limit. Feedback and bug reports are welcome in the *Issues* tab.
+> **Version 0.7.0**, with no time limit. Feedback and bug reports are welcome in the *Issues* tab.
 
 [![Demo video: the plugin running in Le Mans Ultimate](media/lmu-0.5.3.webp)](https://www.youtube.com/watch?v=uv7yqTYdOnI)
 
@@ -22,7 +22,7 @@ Shakers** and with the pedals set up in SimHub Devices (for example Simagic or S
 
 ### In short
 
-- **What it is:** a SimHub plugin that makes your bass shakers, haptic pedals or Simucube ActivePedal vibrate when the rear of the car starts to slide in Le Mans Ultimate, iRacing, rFactor 2, Automobilista 2 (beta) or RaceRoom (beta).
+- **What it is:** a SimHub plugin that makes your bass shakers, haptic pedals or Simucube ActivePedal vibrate when the rear of the car starts to slide in Le Mans Ultimate, iRacing, rFactor 2, Automobilista 2 (beta), RaceRoom (beta), Assetto Corsa (beta), Assetto Corsa EVO (beta), Assetto Corsa Rally (beta) or Assetto Corsa Competizione.
 - **Install:** download the installer, close SimHub, run it and choose what to install. It creates the effect for bass shakers (ShakeIt), haptic pedals and Simucube ActivePedal, whichever you use, in **all** your SimHub profiles.
 - **It learns your car:** in iRacing, Automobilista 2 and RaceRoom it learns by itself, while you drive slowly, the distance from the centre of gravity to the rear axle (or you can type it). See [Rear-axle distance](#rear-axle-distance-iracing-raceroom-and-automobilista-2).
 - **One control per SimHub profile:** each profile has its own on/off, priority and frequency in a table inside the plugin (see [Profiles](#profiles)).
@@ -60,6 +60,10 @@ telemetry refresh is too slow. Spinning the rear wheels under power is not muted
   car (see [Rear-axle distance](#rear-axle-distance-iracing-raceroom-and-automobilista-2)).
 - **Automobilista 2 (beta)** – same method as iRacing. In the game, turn on the shared memory option. Still in testing.
 - **RaceRoom (beta)** – same method as iRacing. Still in testing.
+- **Assetto Corsa EVO (beta)**, **Assetto Corsa Rally (beta)** and **Assetto Corsa Competizione** – the game gives the slip angle of each tyre, so the plugin reads each rear tyre directly: nothing to learn,
+  no samples. Still in testing.
+- **Assetto Corsa (beta)** – the original game does not give the slip angle, but it does tell where each tyre is and where it points. The plugin gets the slip of each rear tyre
+  from how it moves, so, as with EVO, nothing to learn. Still in testing.
 - Other games are not supported. If you want to help with one, turn on the diagnostics switch: it saves the telemetry
   numbers of the game that is running (no personal data); **Open the diagnostics** shows the file.
 
@@ -91,7 +95,7 @@ telemetry refresh is too slow. Spinning the rear wheels under power is not muted
 - Windows 10 or 11.
 - SimHub with your **bass shakers** (ShakeIt: sound card and shakers) and/or your **pedals** (haptic pedals or
   Simucube Active Pedals, in Devices) already set up.
-- Le Mans Ultimate, iRacing, rFactor 2, Automobilista 2 (beta) or RaceRoom (beta).
+- Le Mans Ultimate, iRacing, rFactor 2, Automobilista 2 (beta), RaceRoom (beta), Assetto Corsa (beta), Assetto Corsa EVO (beta), Assetto Corsa Rally (beta) or Assetto Corsa Competizione.
 
 ### Installation
 
@@ -321,6 +325,9 @@ Save one set of settings for each car and load it with one click.
 7. **Haptic pedals:** they only go up to 50 Hz, so the bar stops there. To change the strength or add the effect to
    another pedal, go to SimHub > Devices > your pedals > Effects.
 8. Watch the **Live view** while you tune: if the car swings but the percentages stay low, lower Slip Start.
+9. **Suggested Slip Start by game** (a starting point, it is a matter of taste): **Assetto Corsa 4.5°**, **Assetto Corsa EVO 3.3–3.5°**, **Assetto Corsa Competizione 3.5–3.7°**, and the default **3°** for Le Mans Ultimate and the rest.
+   In the Assetto Corsa games the rear tyres already show a few degrees in a normal fast corner, so a slightly higher Slip Start keeps the effect for real slides.
+   You can save one setup per game and load it with one click.
 
 ### Troubleshooting
 
@@ -405,12 +412,12 @@ Redistribution and modification are not allowed.
 
 ## Español
 
-Plugin de SimHub para **simracing** (**Le Mans Ultimate**, **iRacing**, **rFactor 2** y, en beta, **Automobilista 2** y **RaceRoom**) que hace vibrar tus **bass shakers**, tus **pedales hápticos** y tus
+Plugin de SimHub para **simracing** (**Le Mans Ultimate**, **iRacing**, **rFactor 2** y, en beta, **Automobilista 2**, **RaceRoom**, **Assetto Corsa**, **Assetto Corsa EVO** y **Assetto Corsa Rally**) y **Assetto Corsa Competizione** que hace vibrar tus **bass shakers**, tus **pedales hápticos** y tus
 **Simucube ActivePedal** cuando las ruedas traseras pierden agarre (sobreviraje, se va el culo). Funciona con **ShakeIt Bass
 Shakers** y con los pedales configurados en Dispositivos de SimHub (por ejemplo pedales hápticos Simagic o Simnet, Simsonn VAM o Simucube
 Active Pedals).
 
-> **Versión 0.6.7**, sin límite de tiempo. Los comentarios y fallos son bienvenidos en la pestaña *Issues*.
+> **Versión 0.7.0**, sin límite de tiempo. Los comentarios y fallos son bienvenidos en la pestaña *Issues*.
 
 [![Vídeo de demostración: el plugin funcionando en Le Mans Ultimate](media/lmu-0.5.3.webp)](https://www.youtube.com/watch?v=uv7yqTYdOnI)
 
@@ -418,7 +425,7 @@ Active Pedals).
 
 ### En resumen
 
-- **Qué es:** un plugin de SimHub que hace vibrar tus bass shakers, tus pedales hápticos o tus Simucube ActivePedal cuando el culo del coche empieza a irse en Le Mans Ultimate, iRacing, rFactor 2, Automobilista 2 (beta) o RaceRoom (beta).
+- **Qué es:** un plugin de SimHub que hace vibrar tus bass shakers, tus pedales hápticos o tus Simucube ActivePedal cuando el culo del coche empieza a irse en Le Mans Ultimate, iRacing, rFactor 2, Automobilista 2 (beta), RaceRoom (beta), Assetto Corsa (beta), Assetto Corsa EVO (beta), Assetto Corsa Rally (beta) o Assetto Corsa Competizione.
 - **Instalar:** descarga el instalador, cierra SimHub, ejecútalo y elige qué instalar. Crea el efecto para bass shakers (ShakeIt), pedales hápticos y Simucube ActivePedal, según lo que uses, en **todos** tus perfiles de SimHub.
 - **Aprende tu coche:** en iRacing, Automobilista 2 y RaceRoom aprende solo, mientras conduces despacio, la distancia del centro de gravedad al eje trasero (o puedes escribirla). Mira [Distancia al eje trasero](#distancia-al-eje-trasero-iracing-raceroom-y-automobilista-2).
 - **Un control por perfil de SimHub:** cada perfil tiene su propio on/off, prioridad y frecuencia en una tabla dentro del plugin (mira [Perfiles](#perfiles)).
@@ -456,6 +463,10 @@ el refresco de la telemetría es demasiado lento. El patinazo de las traseras al
   cada coche (mira [Distancia al eje trasero](#distancia-al-eje-trasero-iracing-raceroom-y-automobilista-2)).
 - **Automobilista 2 (beta)** – el mismo método que iRacing. En el juego hay que activar la opción de memoria compartida. En pruebas.
 - **RaceRoom (beta)** – el mismo método que iRacing. En pruebas.
+- **Assetto Corsa EVO (beta)**, **Assetto Corsa Rally (beta)** y **Assetto Corsa Competizione** – el juego da el ángulo de deslizamiento de cada neumático, así que el plugin lee cada neumático trasero directamente: nada que aprender,
+  sin muestras. En pruebas.
+- **Assetto Corsa (beta)** – el juego original no da el ángulo, pero sí dónde está cada neumático y hacia dónde apunta. El plugin saca el deslizamiento de cada neumático trasero
+  de cómo se mueve, así que, como en EVO, no hay nada que aprender. En pruebas.
 - Otros juegos no están soportados. Si quieres ayudar con uno, enciende el interruptor del diagnóstico: guarda los números de
   telemetría del juego en marcha (sin datos personales); **Abrir el diagnóstico** muestra el archivo.
 
@@ -487,7 +498,7 @@ el refresco de la telemetría es demasiado lento. El patinazo de las traseras al
 - Windows 10 u 11.
 - SimHub con tus **bass shakers** (ShakeIt: tarjeta de sonido y shakers) y/o tus **pedales** (hápticos o Simucube
   Active Pedals, en Dispositivos) configurados.
-- Le Mans Ultimate, iRacing, rFactor 2, Automobilista 2 (beta) o RaceRoom (beta).
+- Le Mans Ultimate, iRacing, rFactor 2, Automobilista 2 (beta), RaceRoom (beta), Assetto Corsa (beta), Assetto Corsa EVO (beta), Assetto Corsa Rally (beta) o Assetto Corsa Competizione.
 
 ### Instalación
 
@@ -719,6 +730,9 @@ Guarda un ajuste para cada coche y cárgalo con un clic.
 7. **Pedales hápticos:** solo llegan hasta 50 Hz, así que la barra se para ahí. Para cambiar la fuerza o añadir el
    efecto a otro pedal, ve a SimHub > Dispositivos > tus pedales > Efectos.
 8. Mira la **Vista en vivo** mientras ajustas: si el coche se mueve pero los porcentajes se quedan bajos, baja Slip Start.
+9. **Slip Start sugerido por juego** (un punto de partida, es cuestión de gusto): **Assetto Corsa 4,5°**, **Assetto Corsa EVO 3,3–3,5°**, **Assetto Corsa Competizione 3,5–3,7°**, y el **3°** de fábrica para Le Mans Ultimate y el resto.
+   En los Assetto Corsa los neumáticos traseros ya marcan unos grados en una curva rápida normal, así que un Slip Start algo más alto deja el efecto para los derrapes de verdad.
+   Puedes guardar un setup por juego y cargarlo con un clic.
 
 ### Problemas frecuentes
 
