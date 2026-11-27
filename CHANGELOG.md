@@ -1,12 +1,18 @@
 # Changelog
 
-**Latest version / Última versión: [v0.7.0](../../releases/latest)**
+**Latest version / Última versión: [v0.8.0](../../releases/latest)**
 
 [English](#english) | [Español](#español)
 
 ---
 
 ## English
+
+### 0.8.0
+- **New overlay:** a settings overlay (Pro mode) with the live graph and all the Pro settings, to tune the effect without leaving the game.
+- **New compatible hardware:** NLR HF8 Pro, through the new ShakeIt Motors effect (on/off, always at 100%).
+- **Inverted frequencies:** the frequency can now go down as the slide grows (per device and per SimHub profile).
+- **Now editable in Pro mode:** Power up and Anticipation (with its own start point and speed range).
 
 ### 0.7.0
 - **New games: Assetto Corsa Competizione, Assetto Corsa EVO, Assetto Corsa Rally and Assetto Corsa (the original).** The four read each rear tyre directly, so there is nothing to learn
@@ -224,6 +230,12 @@
 ---
 
 ## Español
+
+### 0.8.0
+- **Nuevo overlay:** un overlay de ajustes (modo Pro) con la gráfica en vivo y todos los ajustes Pro, para tocar el efecto sin salir del juego.
+- **Nuevo hardware compatible:** NLR HF8 Pro, a través del nuevo efecto de ShakeIt Motors (encendido y apagado, siempre al 100 %).
+- **Frecuencias invertidas:** ahora la frecuencia puede bajar al crecer el derrape (por dispositivo y por perfil de SimHub).
+- **Ahora modificables en modo Pro:** Power up y Anticipación (con su punto de inicio y su rango de velocidad).
 
 ### 0.7.0
 - **Juegos nuevos: Assetto Corsa Competizione, Assetto Corsa EVO, Assetto Corsa Rally y Assetto Corsa (el original).** Los cuatro leen cada neumático trasero directamente, así que no hay nada que aprender

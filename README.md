@@ -2,7 +2,7 @@
 
 *Formerly / antes: **Huriz - LMU Oversteer** and **LMU - Rear Slip Pro***
 
-**Latest version / Última versión: [v0.7.0](../../releases/latest)**
+**Latest version / Última versión: [v0.8.0](../../releases/latest)**
 
 [English](#english) | [Español](#español) · [Changelog](CHANGELOG.md)
 
@@ -83,6 +83,9 @@ telemetry refresh is too slow. Spinning the rear wheels under power is not muted
 - A **live view** with a GT car seen from above: its front wheels turn with your steering, and the rear wheels, the
   outline and the slide line change colour with the slide (green, then yellow to red).
 - An **overlay for Dash Studio** (Overlays tab) that shows the live view over the game.
+- A **settings overlay** (Pro mode): a floating window, always on top of the game, with the live graph and all the Pro settings, to tune the effect without leaving the game.
+- **ShakeIt Motors** (compatible with the **NLR HF8 Pro**): an on/off effect for motors, always at 100%.
+- **Inverted frequencies**, per device and per SimHub profile: the frequency goes down as the slide grows.
 - Creates the **Huriz - Sim Car Oversteer** effect for **bass shakers** in ShakeIt (50 Hz base, 60 Hz high, high priority).
 - Creates the same effect for **haptic pedals** (Simagic, Simnet and Simsonn VAM), on the throttle pedal (45 Hz base, 50 Hz high).
 - Creates the same effect for the **Simucube ActivePedal**, on the throttle pedal (50 Hz base, 75 Hz high).
@@ -106,6 +109,7 @@ telemetry refresh is too slow. Spinning the rear wheels under power is not muted
    red); detected ones come ticked, and you can tick the others anyway:
    - **Plugin** – always installed.
    - **Bass shakers** – the effect in ShakeIt Bass Shakers. Ticked.
+   - **Motors** – the effect in ShakeIt Motors (on/off, always at 100%), for example for the NLR HF8 Pro. Ticked.
    - **Pedals (SimHub Devices)** – four options in the same group:
      - **Simagic Haptic Pedals** – **tested only with Simagic haptic pedals**; other brands have not been tested.
      - **Simnet Haptic Pedals**.
@@ -145,6 +149,8 @@ The installer adds an overlay called **Huriz - Sim Car Oversteer** to SimHub, so
 In the plugin tab, the **Dash Studio overlay** drop-down has an on/off switch for the image and the
 **Overlay background** option (dark or fully transparent). It also tells you whether the template is installed.
 The road is in the **Image** group of the settings.
+
+**Settings overlay (Pro mode).** In the **Dash Studio overlay** drop-down, turn on **Settings overlay**: a floating window, always on top of the game (run the game in windowed or borderless mode), with the live graph and all the Pro settings. It shows up in the garage and on track, not in the menus. Drag it by its title bar, fold it with the dash, choose its size (Normal, Large, Extra large) and use **Show to place it** and **Reset position**. Each setting has its own reset arrow and there is a **Reset to default** button at the bottom. It changes the same settings as the tab.
 
 The overlay shows the same drawing as the live view, with a single percentage at the bottom centre: **0% at Slip Start
 and 100% at Slip Max**, so you can see at a glance how far into the slide you are.
@@ -486,6 +492,9 @@ el refresco de la telemetría es demasiado lento. El patinazo de las traseras al
 - Una **vista en vivo** con un GT visto desde arriba: sus ruedas delanteras giran con el volante, y las ruedas traseras,
   el contorno y la línea del derrape cambian de color con el derrape (verde, y de amarillo a rojo).
 - Un **overlay para Dash Studio** (pestaña Overlays) que muestra la vista en vivo sobre el juego.
+- Un **overlay de ajustes** (modo Pro): una ventana flotante, siempre encima del juego, con la gráfica en vivo y todos los ajustes Pro, para tocar el efecto sin salir del juego.
+- **ShakeIt Motors** (compatible con el **NLR HF8 Pro**): un efecto de encendido y apagado para motores, siempre al 100 %.
+- **Frecuencias invertidas**, por dispositivo y por perfil de SimHub: la frecuencia baja al crecer el derrape.
 - Crea solo el efecto **Huriz - Sim Car Oversteer** para **bass shakers** en ShakeIt (50 Hz base, 60 Hz alta, prioridad alta).
 - Crea el mismo efecto para **pedales hápticos** (Simagic, Simnet y Simsonn VAM), en el acelerador (45 Hz base, 50 Hz alta).
 - Crea el mismo efecto para los **Simucube ActivePedal**, en el acelerador (50 Hz base, 75 Hz alta).
@@ -509,6 +518,7 @@ el refresco de la telemetría es demasiado lento. El patinazo de las traseras al
    rojo); los detectados salen marcados y los demás se pueden marcar igualmente:
    - **Plugin** – siempre se instala.
    - **Bass shakers** – el efecto en ShakeIt Bass Shakers. Marcado.
+   - **Motores** – el efecto en ShakeIt Motors (encendido y apagado, siempre al 100 %), por ejemplo para el NLR HF8 Pro. Marcado.
    - **Pedales (Dispositivos de SimHub)** – cuatro opciones en el mismo grupo:
      - **Simagic Haptic Pedals** – **solo probado con pedales hápticos Simagic**; otras marcas no se han probado.
      - **Simnet Haptic Pedals**.
@@ -548,6 +558,8 @@ El instalador añade a SimHub un overlay llamado **Huriz - Sim Car Oversteer**, 
 En la pestaña del plugin, el desplegable **Overlay de Dash Studio** tiene el interruptor de la imagen y la opción
 **Fondo del overlay** (oscuro o totalmente transparente). También te dice si la plantilla está instalada.
 La carretera está en el grupo **Imagen** de los ajustes.
+
+**Overlay de ajustes (modo Pro).** En el desplegable **Overlay de Dash Studio**, activa **Overlay de ajustes**: una ventana flotante, siempre encima del juego (con el juego en ventana o sin bordes), con la gráfica en vivo y todos los ajustes Pro. Sale en el garaje y en pista, no en los menús. Se arrastra por la barra de arriba, se pliega con el guion, tiene tres tamaños (Normal, Grande, Muy grande) y los botones **Mostrar para colocarla** y **Recolocar**. Cada ajuste tiene su flecha de restablecer y abajo hay un botón **Restablecer valores**. Cambia los mismos ajustes que la pestaña.
 
 El overlay muestra el mismo dibujo que la vista en vivo, con un solo porcentaje abajo en el centro: **0% en Slip Start
 y 100% en Slip Max**, para ver de un vistazo cuánto se está yendo la zaga.
